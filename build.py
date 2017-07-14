@@ -2,6 +2,8 @@
 import subprocess
 import sys
 import json
+import hashlib
+from collections import namedtuple
 
 HEADER = """//!
 //! This library is automatically generated from Google's list of known CT
@@ -12,7 +14,12 @@ HEADER = """//!
 //!
 
 extern crate sct;
-"""
+
+pub static LOGS: [&sct::Log; %d] = ["""
+
+FOOTER = """];"""
+
+Log = namedtuple('Log', 'name url mmd operator key keyid json'.split())
 
 LOG_LIST = 'https://www.gstatic.com/ct/log_list/log_list.json'
 LOG_LIST_SIG = 'https://www.gstatic.com/ct/log_list/log_list.sig'
@@ -21,95 +28,115 @@ def fetch_and_check_sig():
     for cmd in (['curl', '-o', 'log_list.sig', LOG_LIST_SIG],
                 ['curl', '-o', 'log_list.json', LOG_LIST],
                 ['openssl', 'dgst', '-sha256', '-verify', 
-                 'log_list_pubkey.pem', '-signature', 'log_list.sig', 'log_list.json']):
-        subprocess.check_call(cmd)
+                 'log_list_pubkey.pem', '-signature', 'log_list.sig', 'log_list.json'],
+                ):
+        subprocess.check_call(cmd, stdout = subprocess.PIPE)
     return json.load(open('log_list.json'))
 
-def split_bundle(bundle):
-    cert = ''
-    for line in bundle.splitlines():
-        if line.strip() != '':
-            cert += line + '\n'
-        if '-----END CERTIFICATE-----' in line:
-            yield cert
-            cert = ''
+def convert_json(json):
+    operators = { v['id']: v['name'] for v in json['operators'] }
 
-def calc_spki_hash(cert):
-    """
-    Use openssl to sha256 hash the public key in the certificate.
-    """
-    proc = subprocess.Popen(
-            ['openssl', 'x509', '-noout', '-sha256', '-fingerprint'],
-            stdin = subprocess.PIPE,
-            stdout = subprocess.PIPE)
-    stdout, _ = proc.communicate(cert)
-    assert proc.returncode == 0
-    assert stdout.startswith('SHA256 Fingerprint=')
-    hash = stdout.replace('SHA256 Fingerprint=', '').replace(':', '')
-    hash = hash.strip()
-    assert len(hash) == 64
-    return hash.lower()
+    for lj in json['logs']:
+        operator = ', '.join(operators[op] for op in lj['operated_by'])
+        key = lj['key'].decode('base64')
+        keyid = hashlib.sha256(key).digest()
 
-def extract_header_spki_hash(cert):
-    """
-    Extract the sha256 hash of the public key in the header, for
-    cross-checking.
-    """
-    line = [ll for ll in cert.splitlines() if ll.startswith('# SHA256 Fingerprint: ')][0]
-    return line.replace('# SHA256 Fingerprint: ', '').replace(':', '').lower()
-
-def unwrap_pem(cert):
-    start = '-----BEGIN CERTIFICATE-----\n'
-    end = '-----END CERTIFICATE-----\n'
-    base64 = cert[cert.index(start)+len(start):cert.rindex(end)]
-    return base64.decode('base64')
-
-def extract(msg, name):
-    lines = msg.splitlines()
-    value = [ll for ll in lines if ll.startswith(name + ': ')][0]
-    return value[len(name) + 2:].strip()
-
-def convert_cert(cert_der):
-    proc = subprocess.Popen(
-            ['target/debug/process_cert'],
-            stdin = subprocess.PIPE,
-            stdout = subprocess.PIPE)
-    stdout, _ = proc.communicate(cert_der)
-    assert proc.returncode == 0
-    return dict(
-            subject = extract(stdout, 'Subject'),
-            spki = extract(stdout, 'SPKI'),
-            name_constraints = extract(stdout, 'Name-Constraints'))
+        log = Log(lj['description'],
+                lj['url'],
+                lj['maximum_merge_delay'],
+                operator,
+                key,
+                keyid,
+                lj)
+        yield log
 
 def commentify(cert):
     lines = cert.splitlines()
     lines = [ll[2:] if ll.startswith('# ') else ll for ll in lines]
-    return '/*\n   * ' + ('\n   * '.join(lines)) + '\n   */'
+    return '/*\n     * ' + ('\n     * '.join(lines)) + '\n     */'
 
-def convert_bytes(hex):
-    bb = hex.decode('hex')
+def convert_bytes(bb):
     return bb.encode('string_escape').replace('"', '\\"')
 
-def print_root(cert, data):
-    subject = convert_bytes(data['subject'])
-    spki = convert_bytes(data['spki'])
-    nc = data['name_constraints']
-    nc = ('Some(b"%s")' % convert_bytes(nc)) if nc != 'None' else nc
+def raw_public_key(spki):
+    def take_byte(b):
+        return ord(b[0]), b[1:]
 
-    print """  %s
-  webpki::TrustAnchor {
-    subject: b"%s",
-    spki: b"%s",
-    name_constraints: %s
-  },
-""" % (commentify(cert), subject, spki, nc)
+    def take_len(b):
+        v, b = take_byte(b)
+
+        if v & 0x80:
+            r = 0
+            for _ in range(v & 3):
+                x, b = take_byte(b)
+                r <<= 8
+                r |= x
+            return r, b
+
+        return v, b
+
+    def take_seq(b):
+        tag, b = take_byte(b)
+        ll, b = take_len(b)
+        assert tag == 0x30
+        return b[:ll], b[ll:]
+
+    def take_bitstring(b):
+        tag, b = take_byte(b)
+        ll, b = take_len(b)
+        bits, b = take_byte(b)
+        assert tag == 0x03
+        assert bits == 0
+        return b[:ll-1], b[ll-1:]
+
+    open('key.bin', 'w').write(spki)
+    spki, rest = take_seq(spki)
+    print 'rest1', rest.encode('hex')
+    assert rest == ''
+    id, data = take_seq(spki)
+    keydata, rest = take_bitstring(data)
+    assert rest == ''
+    return keydata
+
+def print_log(log):
+    comment = commentify(
+        json.dumps(log.json,
+            indent = 2,
+            separators = (',', ': '),
+            sort_keys = True)
+        )
+
+    id_up = log.key.encode('hex').upper()[:16]
+    description = log.name
+    url = log.url
+    operator = log.operator
+    key = convert_bytes(raw_public_key(log.key))
+    keyid_hex = ', '.join('0x%02x' % ord(x) for x in log.keyid)
+    mmd = log.mmd
+
+    print """    %(comment)s
+    &sct::Log {
+        description: "%(description)s",
+        url: "%(url)s",
+        operated_by: "%(operator)s",
+        key: b"%(key)s",
+        id: [ %(keyid_hex)s ],
+        max_merge_delay: %(mmd)d,
+    },
+""" % locals()
 
 if __name__ == '__main__':
     if sys.platform == "win32":
         import os, msvcrt
         msvcrt.setmode(sys.stdout.fileno(), os.O_BINARY)
 
-    json = fetch_and_check_sig()
-    print json
+    data = fetch_and_check_sig()
 
-    print HEADER
+    logs = {}
+    for log in convert_json(data):
+        logs[log.keyid.encode('hex')] = log
+
+    print HEADER % len(logs.keys())
+    for id in sorted(logs.keys()):
+        print_log(logs[id])
+    print FOOTER
