@@ -3,6 +3,7 @@ import subprocess
 import sys
 import json
 import hashlib
+import time
 from collections import namedtuple
 
 HEADER = """//!
@@ -40,6 +41,10 @@ def convert_json(json):
         operator = ', '.join(operators[op] for op in lj['operated_by'])
         key = lj['key'].decode('base64')
         keyid = hashlib.sha256(key).digest()
+
+        disqualification = lj.get('disqualified_at', None)
+        if disqualification and time.time() > disqualification:
+            continue
 
         log = Log(lj['description'],
                 lj['url'],
@@ -91,7 +96,6 @@ def raw_public_key(spki):
 
     open('key.bin', 'w').write(spki)
     spki, rest = take_seq(spki)
-    print 'rest1', rest.encode('hex')
     assert rest == ''
     id, data = take_seq(spki)
     keydata, rest = take_bitstring(data)
