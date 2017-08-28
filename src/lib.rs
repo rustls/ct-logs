@@ -87,7 +87,7 @@ pub static LOGS: [&sct::Log; 16] = [
     &sct::Log {
         description: "StartCom log",
         url: "ct.startssl.com/",
-        operated_by: "StartSSL",
+        operated_by: "StartCom",
         key: b"\x04H\xf3Y\xf3\xf6\x05\x18\xd3\xdb\xb2\xedF~\xcf\xc8\x11\xb5W\xb1\xa8\xd6L\xe6\x9f\xb7J\x1a\x14\x86C\xa9H\xb0\xcbZ?<J\xca\xdf\xc4\x82\x14U\x9a\xf8\xf7\x8e@U\xdc\xf4\xd2\xaf\xeaut\xfbN\x7f`\x86.Q",
         id: [ 0x34, 0xbb, 0x6a, 0xd6, 0xc3, 0xdf, 0x9c, 0x03, 0xee, 0xa8, 0xa4, 0x99, 0xff, 0x78, 0x91, 0x48, 0x6c, 0x9d, 0x5e, 0x5c, 0xac, 0x92, 0xd0, 0x1f, 0x7b, 0xfd, 0x1b, 0xce, 0x19, 0xdb, 0x48, 0xef ],
         max_merge_delay: 86400,
@@ -108,7 +108,7 @@ pub static LOGS: [&sct::Log; 16] = [
     &sct::Log {
         description: "WoSign log",
         url: "ctlog.wosign.com/",
-        operated_by: "Wosign",
+        operated_by: "WoSign",
         key: b"\x04\xcc\x11\x88{-f\xcb\xae\x8fM0f\'\x19%\"\x93!F\xb4/\x01\xd3\xc6\xf9+\xd5\xc8\xbas\x9b\x06\xa2\xf0\x8a\x02\x9c\xd0kF\x180\x85\xba\xe9$\x8b\x0e\xd1[p(\x0c~\xf1:E\x7fZ\xf3\x82B`1",
         id: [ 0x41, 0xb2, 0xdc, 0x2e, 0x89, 0xe6, 0x3c, 0xe4, 0xaf, 0x1b, 0xa7, 0xbb, 0x29, 0xbf, 0x68, 0xc6, 0xde, 0xe6, 0xf9, 0xf1, 0xcc, 0x04, 0x7e, 0x30, 0xdf, 0xfa, 0xe3, 0xb3, 0xba, 0x25, 0x92, 0x63 ],
         max_merge_delay: 86400,
