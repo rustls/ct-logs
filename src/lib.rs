@@ -16,7 +16,7 @@ pub static LOGS: [&sct::Log; 16] = [
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEjicnerZVCXTrbEuUhGW85BXx6lrYfA43zro/bAna5ymW00VQb94etBzSg4j/KS/Oqf/fNN51D8DMGA2ULvw3AQ==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     6
+     *     5
      *   ],
      *   "url": "ctlog-gen2.api.venafi.com/"
      * }
@@ -37,7 +37,7 @@ pub static LOGS: [&sct::Log; 16] = [
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEowJkhCK7JewN47zCyYl93UXQ7uYVhY/Z5xcbE4Dq7bKFN61qxdglnfr0tPNuFiglN+qjN2Syxwv9UeXBBfQOtQ==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     2
+     *     1
      *   ],
      *   "url": "sirius.ws.symantec.com/"
      * }
@@ -45,7 +45,7 @@ pub static LOGS: [&sct::Log; 16] = [
     &sct::Log {
         description: "Symantec 'Sirius' log",
         url: "sirius.ws.symantec.com/",
-        operated_by: "Symantec",
+        operated_by: "DigiCert",
         key: b"\x04\xa3\x02d\x84\"\xbb%\xec\r\xe3\xbc\xc2\xc9\x89}\xddE\xd0\xee\xe6\x15\x85\x8f\xd9\xe7\x17\x1b\x13\x80\xea\xed\xb2\x857\xadj\xc5\xd8%\x9d\xfa\xf4\xb4\xf3n\x16(%7\xea\xa37d\xb2\xc7\x0b\xfdQ\xe5\xc1\x05\xf4\x0e\xb5",
         id: [ 0x15, 0x97, 0x04, 0x88, 0xd7, 0xb9, 0x97, 0xa0, 0x5b, 0xeb, 0x52, 0x51, 0x2a, 0xde, 0xe8, 0xd2, 0xe8, 0xb4, 0xa3, 0x16, 0x52, 0x64, 0x12, 0x1a, 0x9f, 0xab, 0xfb, 0xd5, 0xf8, 0x5a, 0xd9, 0x3f ],
         max_merge_delay: 86400,
@@ -79,7 +79,7 @@ pub static LOGS: [&sct::Log; 16] = [
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESPNZ8/YFGNPbsu1Gfs/IEbVXsajWTOaft0oaFIZDqUiwy1o/PErK38SCFFWa+PeOQFXc9NKv6nV0+05/YIYuUQ==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     8
+     *     7
      *   ],
      *   "url": "ct.startssl.com/"
      * }
@@ -100,7 +100,7 @@ pub static LOGS: [&sct::Log; 16] = [
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzBGIey1my66PTTBmJxklIpMhRrQvAdPG+SvVyLpzmwai8IoCnNBrRhgwhbrpJIsO0VtwKAx+8TpFf1rzgkJgMQ==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     5
+     *     4
      *   ],
      *   "url": "ctlog.wosign.com/"
      * }
@@ -121,7 +121,7 @@ pub static LOGS: [&sct::Log; 16] = [
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE8m/SiQ8/xfiHHqtls9m7FyOMBg4JVZY9CgiixXGz0akvKD6DEL8S0ERmFe9U4ZiA0M4kbT5nmuk3I85Sk4bagA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     9
+     *     8
      *   ],
      *   "url": "sabre.ct.comodo.com/"
      * }
@@ -129,7 +129,7 @@ pub static LOGS: [&sct::Log; 16] = [
     &sct::Log {
         description: "Comodo 'Sabre' CT log",
         url: "sabre.ct.comodo.com/",
-        operated_by: "Comodo",
+        operated_by: "Comodo CA Limited",
         key: b"\x04\xf2o\xd2\x89\x0f?\xc5\xf8\x87\x1e\xabe\xb3\xd9\xbb\x17#\x8c\x06\x0e\tU\x96=\n\x08\xa2\xc5q\xb3\xd1\xa9/(>\x83\x10\xbf\x12\xd0Df\x15\xefT\xe1\x98\x80\xd0\xce$m>g\x9a\xe97#\xceR\x93\x86\xda\x80",
         id: [ 0x55, 0x81, 0xd4, 0xc2, 0x16, 0x90, 0x36, 0x01, 0x4a, 0xea, 0x0b, 0x9b, 0x57, 0x3c, 0x53, 0xf0, 0xc0, 0xe4, 0x38, 0x78, 0x70, 0x25, 0x08, 0x17, 0x2f, 0xa3, 0xaa, 0x1d, 0x07, 0x13, 0xd3, 0x0c ],
         max_merge_delay: 86400,
@@ -190,7 +190,7 @@ pub static LOGS: [&sct::Log; 16] = [
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7+R9dC4VFbbpuyOL+yy14ceAmEf7QGlo/EmtYU6DRzwat43f/3swtLr/L8ugFOOt1YU/RFmMjGCL17ixv66MZw==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     9
+     *     8
      *   ],
      *   "url": "mammoth.ct.comodo.com/"
      * }
@@ -198,7 +198,7 @@ pub static LOGS: [&sct::Log; 16] = [
     &sct::Log {
         description: "Comodo 'Mammoth' CT log",
         url: "mammoth.ct.comodo.com/",
-        operated_by: "Comodo",
+        operated_by: "Comodo CA Limited",
         key: b"\x04\xef\xe4}t.\x15\x15\xb6\xe9\xbb#\x8b\xfb,\xb5\xe1\xc7\x80\x98G\xfb@ih\xfcI\xadaN\x83G<\x1a\xb7\x8d\xdf\xff{0\xb4\xba\xff/\xcb\xa0\x14\xe3\xad\xd5\x85?DY\x8c\x8c`\x8b\xd7\xb8\xb1\xbf\xae\x8cg",
         id: [ 0x6f, 0x53, 0x76, 0xac, 0x31, 0xf0, 0x31, 0x19, 0xd8, 0x99, 0x00, 0xa4, 0x51, 0x15, 0xff, 0x77, 0x15, 0x1c, 0x11, 0xd9, 0x02, 0xc1, 0x00, 0x29, 0x06, 0x8d, 0xb2, 0x08, 0x9a, 0x37, 0xd9, 0x13 ],
         max_merge_delay: 86400,
@@ -253,7 +253,7 @@ pub static LOGS: [&sct::Log; 16] = [
      *   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv7UIYZopMgTTJWPp2IXhhuAf1l6a9zM7gBvntj5fLaFm9pVKhKYhVnno94XuXeN8EsDgiSIJIj66FpUGvai5samyetZhLocRuXhAiXXbDNyQ4KR51tVebtEq2zT0mT9liTtGwiksFQccyUsaVPhsHq9gJ2IKZdWauVA2Fm5x9h8B9xKn/L/2IaMpkIYtd967TNTP/dLPgixN1PLCLaypvurDGSVDsuWabA3FHKWL9z8wr7kBkbdpEhLlg2H+NAC+9nGKx+tQkuhZ/hWR65aX+CNUPy2OB9/u2rNPyDydb988LENXoUcMkQT0dU3aiYGkFAY0uZjD2vH97TM20xYtNQIDAQAB",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     7
+     *     6
      *   ],
      *   "url": "ctserver.cnnic.cn/"
      * }
@@ -295,7 +295,7 @@ pub static LOGS: [&sct::Log; 16] = [
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6pWeAv/u8TNtS4e8zf0ZF2L/lNPQWQc/Ai0ckP7IRzA78d0NuBEMXR2G3avTK0Zm+25ltzv9WWis36b4ztIYTQ==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     2
+     *     1
      *   ],
      *   "url": "vega.ws.symantec.com/"
      * }
@@ -303,7 +303,7 @@ pub static LOGS: [&sct::Log; 16] = [
     &sct::Log {
         description: "Symantec 'Vega' log",
         url: "vega.ws.symantec.com/",
-        operated_by: "Symantec",
+        operated_by: "DigiCert",
         key: b"\x04\xea\x95\x9e\x02\xff\xee\xf13mK\x87\xbc\xcd\xfd\x19\x17b\xff\x94\xd3\xd0Y\x07?\x02-\x1c\x90\xfe\xc8G0;\xf1\xdd\r\xb8\x11\x0c]\x1d\x86\xdd\xab\xd3+Ff\xfbne\xb7;\xfdYh\xac\xdf\xa6\xf8\xce\xd2\x18M",
         id: [ 0xbc, 0x78, 0xe1, 0xdf, 0xc5, 0xf6, 0x3c, 0x68, 0x46, 0x49, 0x33, 0x4d, 0xa1, 0x0f, 0xa1, 0x5f, 0x09, 0x79, 0x69, 0x20, 0x09, 0xc0, 0x81, 0xb4, 0xf3, 0xf6, 0x91, 0x7f, 0x3e, 0xd9, 0xb8, 0xa5 ],
         max_merge_delay: 86400,
@@ -316,7 +316,7 @@ pub static LOGS: [&sct::Log; 16] = [
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEluqsHEYMG1XcDfy1lCdGV0JwOmkY4r87xNuroPS2bMBTP01CEDPwWJePa75y9CrsHEKqAy8afig1dpkIPSEUhg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     2
+     *     1
      *   ],
      *   "url": "ct.ws.symantec.com/"
      * }
@@ -324,7 +324,7 @@ pub static LOGS: [&sct::Log; 16] = [
     &sct::Log {
         description: "Symantec log",
         url: "ct.ws.symantec.com/",
-        operated_by: "Symantec",
+        operated_by: "DigiCert",
         key: b"\x04\x96\xea\xac\x1cF\x0c\x1bU\xdc\r\xfc\xb5\x94\'FWBp:i\x18\xe2\xbf;\xc4\xdb\xab\xa0\xf4\xb6l\xc0S?MB\x103\xf0X\x97\x8fk\xber\xf4*\xec\x1cB\xaa\x03/\x1a~(5v\x99\x08=!\x14\x86",
         id: [ 0xdd, 0xeb, 0x1d, 0x2b, 0x7a, 0x0d, 0x4f, 0xa6, 0x20, 0x8b, 0x81, 0xad, 0x81, 0x68, 0x70, 0x7e, 0x2e, 0x8e, 0x9d, 0x01, 0xd5, 0x5c, 0x88, 0x8d, 0x3d, 0x11, 0xc4, 0xcd, 0xb6, 0xec, 0xbe, 0xcc ],
         max_merge_delay: 86400,
