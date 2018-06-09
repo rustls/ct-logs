@@ -4,6 +4,7 @@ import sys
 import json
 import hashlib
 import time
+import base64
 from collections import namedtuple
 
 HEADER = """//!
@@ -39,7 +40,7 @@ def convert_json(json):
 
     for lj in json['logs']:
         operator = ', '.join(operators[op] for op in lj['operated_by'])
-        key = lj['key'].decode('base64')
+        key = base64.b64decode(lj['key'])
         keyid = hashlib.sha256(key).digest()
 
         disqualification = lj.get('disqualified_at', None)
@@ -61,11 +62,11 @@ def commentify(cert):
     return '/*\n     * ' + ('\n     * '.join(lines)) + '\n     */'
 
 def convert_bytes(bb):
-    return bb.encode('string_escape').replace('"', '\\"')
+    return ''.join('\\x{:02x}'.format(b) for b in bb)
 
 def raw_public_key(spki):
     def take_byte(b):
-        return ord(b[0]), b[1:]
+        return b[0], b[1:]
 
     def take_len(b):
         v, b = take_byte(b)
@@ -94,12 +95,12 @@ def raw_public_key(spki):
         assert bits == 0
         return b[:ll-1], b[ll-1:]
 
-    open('key.bin', 'w').write(spki)
+    open('key.bin', 'wb').write(spki)
     spki, rest = take_seq(spki)
-    assert rest == ''
+    assert len(rest) == 0
     id, data = take_seq(spki)
     keydata, rest = take_bitstring(data)
-    assert rest == ''
+    assert len(rest) == 0
     return keydata
 
 def print_log(log):
@@ -110,15 +111,15 @@ def print_log(log):
             sort_keys = True)
         )
 
-    id_up = log.key.encode('hex').upper()[:16]
+    id_up = log.key.hex().upper()[:16]
     description = log.name
     url = log.url
     operator = log.operator
     key = convert_bytes(raw_public_key(log.key))
-    keyid_hex = ', '.join('0x%02x' % ord(x) for x in log.keyid)
+    keyid_hex = ', '.join('0x{:02x}'.format(x) for x in log.keyid)
     mmd = log.mmd
 
-    print """    %(comment)s
+    print("""    %(comment)s
     &sct::Log {
         description: "%(description)s",
         url: "%(url)s",
@@ -127,7 +128,7 @@ def print_log(log):
         id: [ %(keyid_hex)s ],
         max_merge_delay: %(mmd)d,
     },
-""" % locals()
+""" % locals())
 
 if __name__ == '__main__':
     if sys.platform == "win32":
@@ -138,9 +139,9 @@ if __name__ == '__main__':
 
     logs = {}
     for log in convert_json(data):
-        logs[log.keyid.encode('hex')] = log
+        logs[log.keyid.hex()] = log
 
-    print HEADER % len(logs.keys())
+    print(HEADER % len(list(logs.keys())))
     for id in sorted(logs.keys()):
         print_log(logs[id])
-    print FOOTER
+    print(FOOTER)
