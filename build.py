@@ -5,6 +5,7 @@ import json
 import hashlib
 import time
 import base64
+from binascii import hexlify
 from collections import namedtuple
 
 HEADER = """//!
@@ -111,7 +112,7 @@ def print_log(log):
             sort_keys = True)
         )
 
-    id_up = log.key.hex().upper()[:16]
+    id_up = hexlify(log.key).upper()[:16]
     description = log.name
     url = log.url
     operator = log.operator
@@ -139,7 +140,7 @@ if __name__ == '__main__':
 
     logs = {}
     for log in convert_json(data):
-        logs[log.keyid.hex()] = log
+        logs[hexlify(log.keyid)] = log
 
     print(HEADER % len(list(logs.keys())))
     for id in sorted(logs.keys()):
