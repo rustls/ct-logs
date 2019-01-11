@@ -6,7 +6,13 @@
 //! yourself by inspecting and re-running the generation process.
 //!
 
-extern crate sct;
+#![forbid(unsafe_code,
+          unstable_features)]
+#![deny(trivial_casts,
+        trivial_numeric_casts,
+        unused_import_braces,
+        unused_extern_crates,
+        unused_qualifications)]
 
 pub static LOGS: [&sct::Log; 31] = [
     /*
