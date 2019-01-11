@@ -8,7 +8,7 @@
 
 extern crate sct;
 
-pub static LOGS: [&sct::Log; 27] = [
+pub static LOGS: [&sct::Log; 31] = [
     /*
      * {
      *   "description": "Venafi Gen2 CT log",
@@ -116,7 +116,28 @@ pub static LOGS: [&sct::Log; 27] = [
 
     /*
      * {
-     *   "description": "Comodo 'Sabre' CT log",
+     *   "description": "DigiCert Nessie2022 Log",
+     *   "dns_api_endpoint": "digicert-nessie2022.ct.googleapis.com",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEJyTdaAMoy/5jvg4RR019F2ihEV1McclBKMe2okuX7MCv/C87v+nxsfz1Af+p+0lADGMkmNd5LqZVqxbGvlHYcQ==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     2
+     *   ],
+     *   "url": "nessie2022.ct.digicert.com/log/"
+     * }
+     */
+    &sct::Log {
+        description: "DigiCert Nessie2022 Log",
+        url: "nessie2022.ct.digicert.com/log/",
+        operated_by: "DigiCert",
+        key: b"\x04\x27\x24\xdd\x68\x03\x28\xcb\xfe\x63\xbe\x0e\x11\x47\x4d\x7d\x17\x68\xa1\x11\x5d\x4c\x71\xc9\x41\x28\xc7\xb6\xa2\x4b\x97\xec\xc0\xaf\xfc\x2f\x3b\xbf\xe9\xf1\xb1\xfc\xf5\x01\xff\xa9\xfb\x49\x40\x0c\x63\x24\x98\xd7\x79\x2e\xa6\x55\xab\x16\xc6\xbe\x51\xd8\x71",
+        id: [ 0x51, 0xa3, 0xb0, 0xf5, 0xfd, 0x01, 0x79, 0x9c, 0x56, 0x6d, 0xb8, 0x37, 0x78, 0x8f, 0x0c, 0xa4, 0x7a, 0xcc, 0x1b, 0x27, 0xcb, 0xf7, 0x9e, 0x88, 0x42, 0x9a, 0x0d, 0xfe, 0xd4, 0x8b, 0x05, 0xe5 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
+     *   "description": "Sectigo 'Sabre' CT log",
      *   "dns_api_endpoint": "comodo-sabre.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE8m/SiQ8/xfiHHqtls9m7FyOMBg4JVZY9CgiixXGz0akvKD6DEL8S0ERmFe9U4ZiA0M4kbT5nmuk3I85Sk4bagA==",
      *   "maximum_merge_delay": 86400,
@@ -127,9 +148,9 @@ pub static LOGS: [&sct::Log; 27] = [
      * }
      */
     &sct::Log {
-        description: "Comodo 'Sabre' CT log",
+        description: "Sectigo 'Sabre' CT log",
         url: "sabre.ct.comodo.com/",
-        operated_by: "Comodo CA Limited",
+        operated_by: "Sectigo",
         key: b"\x04\xf2\x6f\xd2\x89\x0f\x3f\xc5\xf8\x87\x1e\xab\x65\xb3\xd9\xbb\x17\x23\x8c\x06\x0e\x09\x55\x96\x3d\x0a\x08\xa2\xc5\x71\xb3\xd1\xa9\x2f\x28\x3e\x83\x10\xbf\x12\xd0\x44\x66\x15\xef\x54\xe1\x98\x80\xd0\xce\x24\x6d\x3e\x67\x9a\xe9\x37\x23\xce\x52\x93\x86\xda\x80",
         id: [ 0x55, 0x81, 0xd4, 0xc2, 0x16, 0x90, 0x36, 0x01, 0x4a, 0xea, 0x0b, 0x9b, 0x57, 0x3c, 0x53, 0xf0, 0xc0, 0xe4, 0x38, 0x78, 0x70, 0x25, 0x08, 0x17, 0x2f, 0xa3, 0xaa, 0x1d, 0x07, 0x13, 0xd3, 0x0c ],
         max_merge_delay: 86400,
@@ -248,7 +269,7 @@ pub static LOGS: [&sct::Log; 27] = [
 
     /*
      * {
-     *   "description": "Comodo 'Mammoth' CT log",
+     *   "description": "Sectigo 'Mammoth' CT log",
      *   "dns_api_endpoint": "comodo-mammoth.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7+R9dC4VFbbpuyOL+yy14ceAmEf7QGlo/EmtYU6DRzwat43f/3swtLr/L8ugFOOt1YU/RFmMjGCL17ixv66MZw==",
      *   "maximum_merge_delay": 86400,
@@ -259,11 +280,32 @@ pub static LOGS: [&sct::Log; 27] = [
      * }
      */
     &sct::Log {
-        description: "Comodo 'Mammoth' CT log",
+        description: "Sectigo 'Mammoth' CT log",
         url: "mammoth.ct.comodo.com/",
-        operated_by: "Comodo CA Limited",
+        operated_by: "Sectigo",
         key: b"\x04\xef\xe4\x7d\x74\x2e\x15\x15\xb6\xe9\xbb\x23\x8b\xfb\x2c\xb5\xe1\xc7\x80\x98\x47\xfb\x40\x69\x68\xfc\x49\xad\x61\x4e\x83\x47\x3c\x1a\xb7\x8d\xdf\xff\x7b\x30\xb4\xba\xff\x2f\xcb\xa0\x14\xe3\xad\xd5\x85\x3f\x44\x59\x8c\x8c\x60\x8b\xd7\xb8\xb1\xbf\xae\x8c\x67",
         id: [ 0x6f, 0x53, 0x76, 0xac, 0x31, 0xf0, 0x31, 0x19, 0xd8, 0x99, 0x00, 0xa4, 0x51, 0x15, 0xff, 0x77, 0x15, 0x1c, 0x11, 0xd9, 0x02, 0xc1, 0x00, 0x29, 0x06, 0x8d, 0xb2, 0x08, 0x9a, 0x37, 0xd9, 0x13 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
+     *   "description": "DigiCert Nessie2018 Log",
+     *   "dns_api_endpoint": "digicert-nessie2018.ct.googleapis.com",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEVqpLa2W+Rz1XDZPBIyKJO+KKFOYZTj9MpJWnZeFUqzc5aivOiWEVhs8Gy2AlH3irWPFjIZPZMs3Dv7M+0LbPyQ==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     2
+     *   ],
+     *   "url": "nessie2018.ct.digicert.com/log/"
+     * }
+     */
+    &sct::Log {
+        description: "DigiCert Nessie2018 Log",
+        url: "nessie2018.ct.digicert.com/log/",
+        operated_by: "DigiCert",
+        key: b"\x04\x56\xaa\x4b\x6b\x65\xbe\x47\x3d\x57\x0d\x93\xc1\x23\x22\x89\x3b\xe2\x8a\x14\xe6\x19\x4e\x3f\x4c\xa4\x95\xa7\x65\xe1\x54\xab\x37\x39\x6a\x2b\xce\x89\x61\x15\x86\xcf\x06\xcb\x60\x25\x1f\x78\xab\x58\xf1\x63\x21\x93\xd9\x32\xcd\xc3\xbf\xb3\x3e\xd0\xb6\xcf\xc9",
+        id: [ 0x6f, 0xf1, 0x41, 0xb5, 0x64, 0x7e, 0x42, 0x22, 0xf7, 0xef, 0x05, 0x2c, 0xef, 0xae, 0x7c, 0x21, 0xfd, 0x60, 0x8e, 0x27, 0xd2, 0xaf, 0x5a, 0x6e, 0x9f, 0x4b, 0x8a, 0x37, 0xd6, 0x63, 0x3e, 0xe5 ],
         max_merge_delay: 86400,
     },
 
@@ -353,27 +395,6 @@ pub static LOGS: [&sct::Log; 27] = [
 
     /*
      * {
-     *   "description": "CNNIC CT log",
-     *   "dns_api_endpoint": "cnnic.ct.googleapis.com",
-     *   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv7UIYZopMgTTJWPp2IXhhuAf1l6a9zM7gBvntj5fLaFm9pVKhKYhVnno94XuXeN8EsDgiSIJIj66FpUGvai5samyetZhLocRuXhAiXXbDNyQ4KR51tVebtEq2zT0mT9liTtGwiksFQccyUsaVPhsHq9gJ2IKZdWauVA2Fm5x9h8B9xKn/L/2IaMpkIYtd967TNTP/dLPgixN1PLCLaypvurDGSVDsuWabA3FHKWL9z8wr7kBkbdpEhLlg2H+NAC+9nGKx+tQkuhZ/hWR65aX+CNUPy2OB9/u2rNPyDydb988LENXoUcMkQT0dU3aiYGkFAY0uZjD2vH97TM20xYtNQIDAQAB",
-     *   "maximum_merge_delay": 86400,
-     *   "operated_by": [
-     *     7
-     *   ],
-     *   "url": "ctserver.cnnic.cn/"
-     * }
-     */
-    &sct::Log {
-        description: "CNNIC CT log",
-        url: "ctserver.cnnic.cn/",
-        operated_by: "CNNIC",
-        key: b"\x30\x82\x01\x0a\x02\x82\x01\x01\x00\xbf\xb5\x08\x61\x9a\x29\x32\x04\xd3\x25\x63\xe9\xd8\x85\xe1\x86\xe0\x1f\xd6\x5e\x9a\xf7\x33\x3b\x80\x1b\xe7\xb6\x3e\x5f\x2d\xa1\x66\xf6\x95\x4a\x84\xa6\x21\x56\x79\xe8\xf7\x85\xee\x5d\xe3\x7c\x12\xc0\xe0\x89\x22\x09\x22\x3e\xba\x16\x95\x06\xbd\xa8\xb9\xb1\xa9\xb2\x7a\xd6\x61\x2e\x87\x11\xb9\x78\x40\x89\x75\xdb\x0c\xdc\x90\xe0\xa4\x79\xd6\xd5\x5e\x6e\xd1\x2a\xdb\x34\xf4\x99\x3f\x65\x89\x3b\x46\xc2\x29\x2c\x15\x07\x1c\xc9\x4b\x1a\x54\xf8\x6c\x1e\xaf\x60\x27\x62\x0a\x65\xd5\x9a\xb9\x50\x36\x16\x6e\x71\xf6\x1f\x01\xf7\x12\xa7\xfc\xbf\xf6\x21\xa3\x29\x90\x86\x2d\x77\xde\xbb\x4c\xd4\xcf\xfd\xd2\xcf\x82\x2c\x4d\xd4\xf2\xc2\x2d\xac\xa9\xbe\xea\xc3\x19\x25\x43\xb2\xe5\x9a\x6c\x0d\xc5\x1c\xa5\x8b\xf7\x3f\x30\xaf\xb9\x01\x91\xb7\x69\x12\x12\xe5\x83\x61\xfe\x34\x00\xbe\xf6\x71\x8a\xc7\xeb\x50\x92\xe8\x59\xfe\x15\x91\xeb\x96\x97\xf8\x23\x54\x3f\x2d\x8e\x07\xdf\xee\xda\xb3\x4f\xc8\x3c\x9d\x6f\xdf\x3c\x2c\x43\x57\xa1\x47\x0c\x91\x04\xf4\x75\x4d\xda\x89\x81\xa4\x14\x06\x34\xb9\x98\xc3\xda\xf1\xfd\xed\x33\x36\xd3\x16\x2d\x35\x02\x03\x01\x00\x01",
-        id: [ 0xa5, 0x77, 0xac, 0x9c, 0xed, 0x75, 0x48, 0xdd, 0x8f, 0x02, 0x5b, 0x67, 0xa2, 0x41, 0x08, 0x9d, 0xf8, 0x6e, 0x0f, 0x47, 0x6e, 0xc2, 0x03, 0xc2, 0xec, 0xbe, 0xdb, 0x18, 0x5f, 0x28, 0x26, 0x38 ],
-        max_merge_delay: 86400,
-    },
-
-    /*
-     * {
      *   "description": "Google 'Argon2020' log",
      *   "dns_api_endpoint": "argon2020.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6Tx2p1yKY4015NyIYvdrk36es0uAc1zA4PQ+TGRY+3ZjUTIYY9Wyu+3q/147JG4vNVKLtDWarZwVqGkg6lAYzA==",
@@ -458,8 +479,35 @@ pub static LOGS: [&sct::Log; 27] = [
 
     /*
      * {
+     *   "description": "DigiCert Nessie2020 Log",
+     *   "dns_api_endpoint": "digicert-nessie2020.ct.googleapis.com",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE4hHIyMVIrR9oShgbQMYEk8WX1lmkfFKB448Gn93KbsZnnwljDHY6MQqEnWfKGgMOq0gh3QK48c5ZB3UKSIFZ4g==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     2
+     *   ],
+     *   "url": "nessie2020.ct.digicert.com/log/"
+     * }
+     */
+    &sct::Log {
+        description: "DigiCert Nessie2020 Log",
+        url: "nessie2020.ct.digicert.com/log/",
+        operated_by: "DigiCert",
+        key: b"\x04\xe2\x11\xc8\xc8\xc5\x48\xad\x1f\x68\x4a\x18\x1b\x40\xc6\x04\x93\xc5\x97\xd6\x59\xa4\x7c\x52\x81\xe3\x8f\x06\x9f\xdd\xca\x6e\xc6\x67\x9f\x09\x63\x0c\x76\x3a\x31\x0a\x84\x9d\x67\xca\x1a\x03\x0e\xab\x48\x21\xdd\x02\xb8\xf1\xce\x59\x07\x75\x0a\x48\x81\x59\xe2",
+        id: [ 0xc6, 0x52, 0xa0, 0xec, 0x48, 0xce, 0xb3, 0xfc, 0xab, 0x17, 0x09, 0x92, 0xc4, 0x3a, 0x87, 0x41, 0x33, 0x09, 0xe8, 0x00, 0x65, 0xa2, 0x62, 0x52, 0x40, 0x1b, 0xa3, 0x36, 0x2a, 0x17, 0xc5, 0x65 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
      *   "description": "Cloudflare 'Nimbus2018' Log",
      *   "dns_api_endpoint": "cloudflare-nimbus2018.ct.googleapis.com",
+     *   "final_sth": {
+     *     "sha256_root_hash": "kCdsLaegBfSkoDDRuglFDxiCXZbuRmTgki65u6XsPTU=",
+     *     "timestamp": 1546451090108,
+     *     "tree_head_signature": "BAMARjBEAiBH1be4Jqid5mFpCdxbht8sBJd01WbEl/rWxFHx60G1MwIgVXzN3ubHGZM2BisfGamLUceFpcDAjQhqv8stbGFbCfw=",
+     *     "tree_size": 265514260
+     *   },
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAsVpWvrH3Ke0VRaMg9ZQoQjb5g/xh1z3DDa6IuxY5DyPsk6brlvrUNXZzoIg0DcvFiAn2kd6xmu4Obk5XA/nRg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -542,6 +590,27 @@ pub static LOGS: [&sct::Log; 27] = [
 
     /*
      * {
+     *   "description": "DigiCert Nessie2021 Log",
+     *   "dns_api_endpoint": "digicert-nessie2021.ct.googleapis.com",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9o7AiwrbGBIX6Lnc47I6OfLMdZnRzKoP5u072nBi6vpIOEooktTi1gNwlRPzGC2ySGfuc1xLDeaA/wSFGgpYFg==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     2
+     *   ],
+     *   "url": "nessie2021.ct.digicert.com/log/"
+     * }
+     */
+    &sct::Log {
+        description: "DigiCert Nessie2021 Log",
+        url: "nessie2021.ct.digicert.com/log/",
+        operated_by: "DigiCert",
+        key: b"\x04\xf6\x8e\xc0\x8b\x0a\xdb\x18\x12\x17\xe8\xb9\xdc\xe3\xb2\x3a\x39\xf2\xcc\x75\x99\xd1\xcc\xaa\x0f\xe6\xed\x3b\xda\x70\x62\xea\xfa\x48\x38\x4a\x28\x92\xd4\xe2\xd6\x03\x70\x95\x13\xf3\x18\x2d\xb2\x48\x67\xee\x73\x5c\x4b\x0d\xe6\x80\xff\x04\x85\x1a\x0a\x58\x16",
+        id: [ 0xee, 0xc0, 0x95, 0xee, 0x8d, 0x72, 0x64, 0x0f, 0x92, 0xe3, 0xc3, 0xb9, 0x1b, 0xc7, 0x12, 0xa3, 0x69, 0x6a, 0x09, 0x7b, 0x4b, 0x6a, 0x1a, 0x14, 0x38, 0xe6, 0x47, 0xb2, 0xcb, 0xed, 0xc5, 0xf9 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
      *   "description": "DigiCert Yeti2020 Log",
      *   "dns_api_endpoint": "digicert-yeti2020.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEURAG+Zo0ac3n37ifZKUhBFEV6jfcCzGIRz3tsq8Ca9BP/5XUHy6ZiqsPaAEbVM0uI3Tm9U24RVBHR9JxDElPmg==",
@@ -579,6 +648,27 @@ pub static LOGS: [&sct::Log; 27] = [
         operated_by: "Google",
         key: b"\x04\x4d\xe0\x66\x64\xea\xf3\x64\xaa\x38\xc5\x89\x2d\xc7\xd8\x08\xd9\xc8\x44\x71\xed\xdc\xc3\xfb\x5b\xaf\x9c\x64\xa1\x09\x66\x84\x1d\x7c\x68\xa7\xec\xc4\x3f\x8c\x9c\x82\xe0\x18\xd9\x74\x14\xe9\xb4\x79\x81\xa2\x94\x55\x62\xf3\x9c\x0b\x44\x83\xa1\x2b\xc9\x71\x2b",
         id: [ 0xf6, 0x5c, 0x94, 0x2f, 0xd1, 0x77, 0x30, 0x22, 0x14, 0x54, 0x18, 0x08, 0x30, 0x94, 0x56, 0x8e, 0xe3, 0x4d, 0x13, 0x19, 0x33, 0xbf, 0xdf, 0x0c, 0x2f, 0x20, 0x0b, 0xcc, 0x4e, 0xf1, 0x64, 0xe3 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
+     *   "description": "DigiCert Nessie2019 Log",
+     *   "dns_api_endpoint": "digicert-nessie2019.ct.googleapis.com",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEX+0nudCKImd7QCtelhMrDW0OXni5RE10tiiClZesmrwUk2iHLCoTHHVV+yg5D4n/rxCRVyRhikPpVDOLMLxJaA==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     2
+     *   ],
+     *   "url": "nessie2019.ct.digicert.com/log/"
+     * }
+     */
+    &sct::Log {
+        description: "DigiCert Nessie2019 Log",
+        url: "nessie2019.ct.digicert.com/log/",
+        operated_by: "DigiCert",
+        key: b"\x04\x5f\xed\x27\xb9\xd0\x8a\x22\x67\x7b\x40\x2b\x5e\x96\x13\x2b\x0d\x6d\x0e\x5e\x78\xb9\x44\x4d\x74\xb6\x28\x82\x95\x97\xac\x9a\xbc\x14\x93\x68\x87\x2c\x2a\x13\x1c\x75\x55\xfb\x28\x39\x0f\x89\xff\xaf\x10\x91\x57\x24\x61\x8a\x43\xe9\x54\x33\x8b\x30\xbc\x49\x68",
+        id: [ 0xfe, 0x44, 0x61, 0x08, 0xb1, 0xd0, 0x1a, 0xb7, 0x8a, 0x62, 0xcc, 0xfe, 0xab, 0x6a, 0xb2, 0xb2, 0xba, 0xbf, 0xf3, 0xab, 0xda, 0xd8, 0x0a, 0x4d, 0x8b, 0x30, 0xdf, 0x2d, 0x00, 0x08, 0x83, 0x0c ],
         max_merge_delay: 86400,
     },
 
