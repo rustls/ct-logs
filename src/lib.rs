@@ -14,7 +14,7 @@
         unused_extern_crates,
         unused_qualifications)]
 
-pub static LOGS: [&sct::Log; 31] = [
+pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Venafi Gen2 CT log",
@@ -38,22 +38,43 @@ pub static LOGS: [&sct::Log; 31] = [
 
     /*
      * {
-     *   "description": "Symantec 'Sirius' log",
-     *   "dns_api_endpoint": "symantec-sirius.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEowJkhCK7JewN47zCyYl93UXQ7uYVhY/Z5xcbE4Dq7bKFN61qxdglnfr0tPNuFiglN+qjN2Syxwv9UeXBBfQOtQ==",
+     *   "description": "Google 'Xenon2020' log",
+     *   "dns_api_endpoint": "xenon2020.ct.googleapis.com",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZU75VqjyzSTgFZKAnWg1QeYfFFIRZTMK7q3kWWZsmHhQdrBYnHRZ3OA4kUeUx0JN+xX+dSgt1ruqUhhl7jOvmw==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     2
+     *     0
      *   ],
-     *   "url": "sirius.ws.symantec.com/"
+     *   "url": "ct.googleapis.com/logs/xenon2020/"
      * }
      */
     &sct::Log {
-        description: "Symantec 'Sirius' log",
-        url: "sirius.ws.symantec.com/",
-        operated_by: "DigiCert",
-        key: b"\x04\xa3\x02\x64\x84\x22\xbb\x25\xec\x0d\xe3\xbc\xc2\xc9\x89\x7d\xdd\x45\xd0\xee\xe6\x15\x85\x8f\xd9\xe7\x17\x1b\x13\x80\xea\xed\xb2\x85\x37\xad\x6a\xc5\xd8\x25\x9d\xfa\xf4\xb4\xf3\x6e\x16\x28\x25\x37\xea\xa3\x37\x64\xb2\xc7\x0b\xfd\x51\xe5\xc1\x05\xf4\x0e\xb5",
-        id: [ 0x15, 0x97, 0x04, 0x88, 0xd7, 0xb9, 0x97, 0xa0, 0x5b, 0xeb, 0x52, 0x51, 0x2a, 0xde, 0xe8, 0xd2, 0xe8, 0xb4, 0xa3, 0x16, 0x52, 0x64, 0x12, 0x1a, 0x9f, 0xab, 0xfb, 0xd5, 0xf8, 0x5a, 0xd9, 0x3f ],
+        description: "Google 'Xenon2020' log",
+        url: "ct.googleapis.com/logs/xenon2020/",
+        operated_by: "Google",
+        key: b"\x04\x65\x4e\xf9\x56\xa8\xf2\xcd\x24\xe0\x15\x92\x80\x9d\x68\x35\x41\xe6\x1f\x14\x52\x11\x65\x33\x0a\xee\xad\xe4\x59\x66\x6c\x98\x78\x50\x76\xb0\x58\x9c\x74\x59\xdc\xe0\x38\x91\x47\x94\xc7\x42\x4d\xfb\x15\xfe\x75\x28\x2d\xd6\xbb\xaa\x52\x18\x65\xee\x33\xaf\x9b",
+        id: [ 0x07, 0xb7, 0x5c, 0x1b, 0xe5, 0x7d, 0x68, 0xff, 0xf1, 0xb0, 0xc6, 0x1d, 0x23, 0x15, 0xc7, 0xba, 0xe6, 0x57, 0x7c, 0x57, 0x94, 0xb7, 0x6a, 0xee, 0xbc, 0x61, 0x3a, 0x1a, 0x69, 0xd3, 0xa2, 0x1c ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
+     *   "description": "Google 'Xenon2019' log",
+     *   "dns_api_endpoint": "xenon2019.ct.googleapis.com",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/XyDwqzXL9i2GTjMYkqaEyiRL0Dy9sHq/BTebFdshbvCaXXEh6mjUK0Yy+AsDcI4MpzF1l7Kded2MD5zi420gA==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     0
+     *   ],
+     *   "url": "ct.googleapis.com/logs/xenon2019/"
+     * }
+     */
+    &sct::Log {
+        description: "Google 'Xenon2019' log",
+        url: "ct.googleapis.com/logs/xenon2019/",
+        operated_by: "Google",
+        key: b"\x04\xfd\x7c\x83\xc2\xac\xd7\x2f\xd8\xb6\x19\x38\xcc\x62\x4a\x9a\x13\x28\x91\x2f\x40\xf2\xf6\xc1\xea\xfc\x14\xde\x6c\x57\x6c\x85\xbb\xc2\x69\x75\xc4\x87\xa9\xa3\x50\xad\x18\xcb\xe0\x2c\x0d\xc2\x38\x32\x9c\xc5\xd6\x5e\xca\x75\xe7\x76\x30\x3e\x73\x8b\x8d\xb4\x80",
+        id: [ 0x08, 0x41, 0x14, 0x98, 0x00, 0x71, 0x53, 0x2c, 0x16, 0x19, 0x04, 0x60, 0xbc, 0xfc, 0x47, 0xfd, 0xc2, 0x65, 0x3a, 0xfa, 0x29, 0x2c, 0x72, 0xb3, 0x7f, 0xf8, 0x63, 0xae, 0x29, 0xcc, 0xc9, 0xf0 ],
         max_merge_delay: 86400,
     },
 
@@ -117,6 +138,27 @@ pub static LOGS: [&sct::Log; 31] = [
         operated_by: "Cloudflare",
         key: b"\x04\xc6\x9a\x27\xee\x2a\x6c\xa9\xe8\x48\x79\x4d\x5b\x9a\x9a\x20\xf5\x31\x68\xe0\xf9\x3c\xfb\xda\x0d\xf0\xe6\x07\x97\x54\x36\x24\x65\x57\x9e\x45\x45\x9e\xeb\xaf\x3e\x04\xa8\xd8\x4a\x7e\xea\xf2\xdf\x7c\xd2\xdc\x98\x46\xf1\x3a\xe7\x33\xd3\x7b\x05\x89\xe9\x9a\xb6",
         id: [ 0x44, 0x94, 0x65, 0x2e, 0xb0, 0xee, 0xce, 0xaf, 0xc4, 0x40, 0x07, 0xd8, 0xa8, 0xfe, 0x28, 0xc0, 0xda, 0xe6, 0x82, 0xbe, 0xd8, 0xcb, 0x31, 0xb5, 0x3f, 0xd3, 0x33, 0x96, 0xb5, 0xb6, 0x81, 0xa8 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
+     *   "description": "Google 'Xenon2022' log",
+     *   "dns_api_endpoint": "xenon2022.ct.googleapis.com",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE+WS9FSxAYlCVEzg8xyGwOrmPonoV14nWjjETAIdZvLvukPzIWBMKv6tDNlQjpIHNrUcUt1igRPpqoKDXw2MeKw==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     0
+     *   ],
+     *   "url": "ct.googleapis.com/logs/xenon2022/"
+     * }
+     */
+    &sct::Log {
+        description: "Google 'Xenon2022' log",
+        url: "ct.googleapis.com/logs/xenon2022/",
+        operated_by: "Google",
+        key: b"\x04\xf9\x64\xbd\x15\x2c\x40\x62\x50\x95\x13\x38\x3c\xc7\x21\xb0\x3a\xb9\x8f\xa2\x7a\x15\xd7\x89\xd6\x8e\x31\x13\x00\x87\x59\xbc\xbb\xee\x90\xfc\xc8\x58\x13\x0a\xbf\xab\x43\x36\x54\x23\xa4\x81\xcd\xad\x47\x14\xb7\x58\xa0\x44\xfa\x6a\xa0\xa0\xd7\xc3\x63\x1e\x2b",
+        id: [ 0x46, 0xa5, 0x55, 0xeb, 0x75, 0xfa, 0x91, 0x20, 0x30, 0xb5, 0xa2, 0x89, 0x69, 0xf4, 0xf3, 0x7d, 0x11, 0x2c, 0x41, 0x74, 0xbe, 0xfd, 0x49, 0xb8, 0x85, 0xab, 0xf2, 0xfc, 0x70, 0xfe, 0x6d, 0x47 ],
         max_merge_delay: 86400,
     },
 
@@ -338,6 +380,27 @@ pub static LOGS: [&sct::Log; 31] = [
 
     /*
      * {
+     *   "description": "Google 'Xenon2021' log",
+     *   "dns_api_endpoint": "xenon2021.ct.googleapis.com",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAER+1MInu8Q39BwDZ5Rp9TwXhwm3ktvgJzpk/r7dDgGk7ZacMm3ljfcoIvP1E72T8jvyLT1bvdapylajZcTH6W5g==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     0
+     *   ],
+     *   "url": "ct.googleapis.com/logs/xenon2021/"
+     * }
+     */
+    &sct::Log {
+        description: "Google 'Xenon2021' log",
+        url: "ct.googleapis.com/logs/xenon2021/",
+        operated_by: "Google",
+        key: b"\x04\x47\xed\x4c\x22\x7b\xbc\x43\x7f\x41\xc0\x36\x79\x46\x9f\x53\xc1\x78\x70\x9b\x79\x2d\xbe\x02\x73\xa6\x4f\xeb\xed\xd0\xe0\x1a\x4e\xd9\x69\xc3\x26\xde\x58\xdf\x72\x82\x2f\x3f\x51\x3b\xd9\x3f\x23\xbf\x22\xd3\xd5\xbb\xdd\x6a\x9c\xa5\x6a\x36\x5c\x4c\x7e\x96\xe6",
+        id: [ 0x7d, 0x3e, 0xf2, 0xf8, 0x8f, 0xff, 0x88, 0x55, 0x68, 0x24, 0xc2, 0xc0, 0xca, 0x9e, 0x52, 0x89, 0x79, 0x2b, 0xc5, 0x0e, 0x78, 0x09, 0x7f, 0x2e, 0x6a, 0x97, 0x68, 0x99, 0x7e, 0x22, 0xf0, 0xd7 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
      *   "description": "DigiCert Log Server 2",
      *   "dns_api_endpoint": "digicert2.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzF05L2a4TH/BLgOhNKPoioYCrkoRxvcmajeb8Dj4XQmNY+gxa4Zmz3mzJTwe33i0qMVp+rfwgnliQ/bM/oFmhA==",
@@ -443,27 +506,6 @@ pub static LOGS: [&sct::Log; 31] = [
 
     /*
      * {
-     *   "description": "Symantec 'Vega' log",
-     *   "dns_api_endpoint": "symantec-vega.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6pWeAv/u8TNtS4e8zf0ZF2L/lNPQWQc/Ai0ckP7IRzA78d0NuBEMXR2G3avTK0Zm+25ltzv9WWis36b4ztIYTQ==",
-     *   "maximum_merge_delay": 86400,
-     *   "operated_by": [
-     *     2
-     *   ],
-     *   "url": "vega.ws.symantec.com/"
-     * }
-     */
-    &sct::Log {
-        description: "Symantec 'Vega' log",
-        url: "vega.ws.symantec.com/",
-        operated_by: "DigiCert",
-        key: b"\x04\xea\x95\x9e\x02\xff\xee\xf1\x33\x6d\x4b\x87\xbc\xcd\xfd\x19\x17\x62\xff\x94\xd3\xd0\x59\x07\x3f\x02\x2d\x1c\x90\xfe\xc8\x47\x30\x3b\xf1\xdd\x0d\xb8\x11\x0c\x5d\x1d\x86\xdd\xab\xd3\x2b\x46\x66\xfb\x6e\x65\xb7\x3b\xfd\x59\x68\xac\xdf\xa6\xf8\xce\xd2\x18\x4d",
-        id: [ 0xbc, 0x78, 0xe1, 0xdf, 0xc5, 0xf6, 0x3c, 0x68, 0x46, 0x49, 0x33, 0x4d, 0xa1, 0x0f, 0xa1, 0x5f, 0x09, 0x79, 0x69, 0x20, 0x09, 0xc0, 0x81, 0xb4, 0xf3, 0xf6, 0x91, 0x7f, 0x3e, 0xd9, 0xb8, 0xa5 ],
-        max_merge_delay: 86400,
-    },
-
-    /*
-     * {
      *   "description": "DigiCert Yeti2018 Log",
      *   "dns_api_endpoint": "digicert-yeti2018.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESYlKFDLLFmA9JScaiaNnqlU8oWDytxIYMfswHy9Esg0aiX+WnP/yj4O0ViEHtLwbmOQeSWBGkIu9YK9CLeer+g==",
@@ -528,27 +570,6 @@ pub static LOGS: [&sct::Log; 31] = [
         operated_by: "Cloudflare",
         key: b"\x04\x02\xc5\x69\x5a\xfa\xc7\xdc\xa7\xb4\x55\x16\x8c\x83\xd6\x50\xa1\x08\xdb\xe6\x0f\xf1\x87\x5c\xf7\x0c\x36\xba\x22\xec\x58\xe4\x3c\x8f\xb2\x4e\x9b\xae\x5b\xeb\x50\xd5\xd9\xce\x82\x20\xd0\x37\x2f\x16\x20\x27\xda\x47\x7a\xc6\x6b\xb8\x39\xb9\x39\x5c\x0f\xe7\x46",
         id: [ 0xdb, 0x74, 0xaf, 0xee, 0xcb, 0x29, 0xec, 0xb1, 0xfe, 0xca, 0x3e, 0x71, 0x6d, 0x2c, 0xe5, 0xb9, 0xaa, 0xbb, 0x36, 0xf7, 0x84, 0x71, 0x83, 0xc7, 0x5d, 0x9d, 0x4f, 0x37, 0xb6, 0x1f, 0xbf, 0x64 ],
-        max_merge_delay: 86400,
-    },
-
-    /*
-     * {
-     *   "description": "Symantec log",
-     *   "dns_api_endpoint": "symantec.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEluqsHEYMG1XcDfy1lCdGV0JwOmkY4r87xNuroPS2bMBTP01CEDPwWJePa75y9CrsHEKqAy8afig1dpkIPSEUhg==",
-     *   "maximum_merge_delay": 86400,
-     *   "operated_by": [
-     *     2
-     *   ],
-     *   "url": "ct.ws.symantec.com/"
-     * }
-     */
-    &sct::Log {
-        description: "Symantec log",
-        url: "ct.ws.symantec.com/",
-        operated_by: "DigiCert",
-        key: b"\x04\x96\xea\xac\x1c\x46\x0c\x1b\x55\xdc\x0d\xfc\xb5\x94\x27\x46\x57\x42\x70\x3a\x69\x18\xe2\xbf\x3b\xc4\xdb\xab\xa0\xf4\xb6\x6c\xc0\x53\x3f\x4d\x42\x10\x33\xf0\x58\x97\x8f\x6b\xbe\x72\xf4\x2a\xec\x1c\x42\xaa\x03\x2f\x1a\x7e\x28\x35\x76\x99\x08\x3d\x21\x14\x86",
-        id: [ 0xdd, 0xeb, 0x1d, 0x2b, 0x7a, 0x0d, 0x4f, 0xa6, 0x20, 0x8b, 0x81, 0xad, 0x81, 0x68, 0x70, 0x7e, 0x2e, 0x8e, 0x9d, 0x01, 0xd5, 0x5c, 0x88, 0x8d, 0x3d, 0x11, 0xc4, 0xcd, 0xb6, 0xec, 0xbe, 0xcc ],
         max_merge_delay: 86400,
     },
 
