@@ -18,7 +18,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Venafi Gen2 CT log",
-     *   "dns_api_endpoint": "venafi2.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEjicnerZVCXTrbEuUhGW85BXx6lrYfA43zro/bAna5ymW00VQb94etBzSg4j/KS/Oqf/fNN51D8DMGA2ULvw3AQ==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -81,7 +80,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Yeti2022 Log",
-     *   "dns_api_endpoint": "digicert-yeti2022.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEn/jYHd77W1G1+131td5mEbCdX/1v/KiYW5hPLcOROvv+xA8Nw2BDjB7y+RGyutD2vKXStp/5XIeiffzUfdYTJg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -102,7 +100,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Google 'Icarus' log",
-     *   "dns_api_endpoint": "icarus.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAETtK8v7MICve56qTHHDhhBOuV4IlUaESxZryCfk9QbG9co/CqPvTsgPDbCpp6oFtyAHwlDhnvr7JijXRD9Cb2FA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -122,8 +119,67 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
+     *   "description": "Google 'Argon2022' log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEeIPc6fGmuBg6AJkv/z7NFckmHvf/OqmjchZJ6wm2qN200keRDg352dWpi7CHnSV51BpQYAj1CQY5JuRAwrrDwg==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     0
+     *   ],
+     *   "url": "ct.googleapis.com/logs/argon2022/"
+     * }
+     */
+    &sct::Log {
+        description: "Google 'Argon2022' log",
+        url: "ct.googleapis.com/logs/argon2022/",
+        operated_by: "Google",
+        key: b"\x04\x78\x83\xdc\xe9\xf1\xa6\xb8\x18\x3a\x00\x99\x2f\xff\x3e\xcd\x15\xc9\x26\x1e\xf7\xff\x3a\xa9\xa3\x72\x16\x49\xeb\x09\xb6\xa8\xdd\xb4\xd2\x47\x91\x0e\x0d\xf9\xd9\xd5\xa9\x8b\xb0\x87\x9d\x25\x79\xd4\x1a\x50\x60\x08\xf5\x09\x06\x39\x26\xe4\x40\xc2\xba\xc3\xc2",
+        id: [ 0x29, 0x79, 0xbe, 0xf0, 0x9e, 0x39, 0x39, 0x21, 0xf0, 0x56, 0x73, 0x9f, 0x63, 0xa5, 0x77, 0xe5, 0xbe, 0x57, 0x7d, 0x9c, 0x60, 0x0a, 0xf8, 0xf9, 0x4d, 0x5d, 0x26, 0x5c, 0x25, 0x5d, 0xc7, 0x84 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
+     *   "description": "DigiCert Yeti2023 Log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEfQ0DsdWYitzwFTvG3F4Nbj8Nv5XIVYzQpkyWsU4nuSYlmcwrAp6m092fsdXEw6w1BAeHlzaqrSgNfyvZaJ9y0Q==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     2
+     *   ],
+     *   "url": "yeti2023.ct.digicert.com/log/"
+     * }
+     */
+    &sct::Log {
+        description: "DigiCert Yeti2023 Log",
+        url: "yeti2023.ct.digicert.com/log/",
+        operated_by: "DigiCert",
+        key: b"\x04\x7d\x0d\x03\xb1\xd5\x98\x8a\xdc\xf0\x15\x3b\xc6\xdc\x5e\x0d\x6e\x3f\x0d\xbf\x95\xc8\x55\x8c\xd0\xa6\x4c\x96\xb1\x4e\x27\xb9\x26\x25\x99\xcc\x2b\x02\x9e\xa6\xd3\xdd\x9f\xb1\xd5\xc4\xc3\xac\x35\x04\x07\x87\x97\x36\xaa\xad\x28\x0d\x7f\x2b\xd9\x68\x9f\x72\xd1",
+        id: [ 0x35, 0xcf, 0x19, 0x1b, 0xbf, 0xb1, 0x6c, 0x57, 0xbf, 0x0f, 0xad, 0x4c, 0x6d, 0x42, 0xcb, 0xbb, 0xb6, 0x27, 0x20, 0x26, 0x51, 0xea, 0x3f, 0xe1, 0x2a, 0xef, 0xa8, 0x03, 0xc3, 0x3b, 0xd6, 0x4c ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
+     *   "description": "Cloudflare 'Nimbus2022' Log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESLJHTlAycmJKDQxIv60pZG8g33lSYxYpCi5gteI6HLevWbFVCdtZx+m9b+0LrwWWl/87mkNN6xE0M4rnrIPA/w==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     1
+     *   ],
+     *   "url": "ct.cloudflare.com/logs/nimbus2022/"
+     * }
+     */
+    &sct::Log {
+        description: "Cloudflare 'Nimbus2022' Log",
+        url: "ct.cloudflare.com/logs/nimbus2022/",
+        operated_by: "Cloudflare",
+        key: b"\x04\x48\xb2\x47\x4e\x50\x32\x72\x62\x4a\x0d\x0c\x48\xbf\xad\x29\x64\x6f\x20\xdf\x79\x52\x63\x16\x29\x0a\x2e\x60\xb5\xe2\x3a\x1c\xb7\xaf\x59\xb1\x55\x09\xdb\x59\xc7\xe9\xbd\x6f\xed\x0b\xaf\x05\x96\x97\xff\x3b\x9a\x43\x4d\xeb\x11\x34\x33\x8a\xe7\xac\x83\xc0\xff",
+        id: [ 0x41, 0xc8, 0xca, 0xb1, 0xdf, 0x22, 0x46, 0x4a, 0x10, 0xc6, 0xa1, 0x3a, 0x09, 0x42, 0x87, 0x5e, 0x4e, 0x31, 0x8b, 0x1b, 0x03, 0xeb, 0xeb, 0x4b, 0xc7, 0x68, 0xf0, 0x90, 0x62, 0x96, 0x06, 0xf6 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
      *   "description": "Cloudflare 'Nimbus2021' Log",
-     *   "dns_api_endpoint": "cloudflare-nimbus2021.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExpon7ipsqehIeU1bmpog9TFo4Pk8+9oN8OYHl1Q2JGVXnkVFnuuvPgSo2Ep+6vLffNLcmEbxOucz03sFiematg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -165,7 +221,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Nessie2022 Log",
-     *   "dns_api_endpoint": "digicert-nessie2022.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEJyTdaAMoy/5jvg4RR019F2ihEV1McclBKMe2okuX7MCv/C87v+nxsfz1Af+p+0lADGMkmNd5LqZVqxbGvlHYcQ==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -186,7 +241,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Sectigo 'Sabre' CT log",
-     *   "dns_api_endpoint": "comodo-sabre.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE8m/SiQ8/xfiHHqtls9m7FyOMBg4JVZY9CgiixXGz0akvKD6DEL8S0ERmFe9U4ZiA0M4kbT5nmuk3I85Sk4bagA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -207,7 +261,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Log Server",
-     *   "dns_api_endpoint": "digicert.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAkbFvhu7gkAW6MHSrBlpE1n4+HCFRkC5OLAjgqhkTH+/uzSfSl8ois8ZxAD2NgaTZe1M9akhYlrYkes4JECs6A==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -228,7 +281,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Yeti2021 Log",
-     *   "dns_api_endpoint": "digicert-yeti2021.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6J4EbcpIAl1+AkSRsbhoY5oRTj3VoFfaf1DlQkfi7Rbe/HcjfVtrwN8jaC+tQDGjF+dqvKhWJAQ6Q6ev6q9Mew==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -249,7 +301,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Cloudflare 'Nimbus2020' Log",
-     *   "dns_api_endpoint": "cloudflare-nimbus2020.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE01EAhx4o0zPQrXTcYjgCt4MVFsT0Pwjzb1RwrM0lhWDlxAYPP6/gyMCXNkOn/7KFsjL7rwk78tHMpY8rXn8AYg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -269,29 +320,7 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
-     *   "description": "Google 'Argon2019' log",
-     *   "dns_api_endpoint": "argon2019.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEI3MQm+HzXvaYa2mVlhB4zknbtAT8cSxakmBoJcBKGqGwYS0bhxSpuvABM1kdBTDpQhXnVdcq+LSiukXJRpGHVg==",
-     *   "maximum_merge_delay": 86400,
-     *   "operated_by": [
-     *     0
-     *   ],
-     *   "url": "ct.googleapis.com/logs/argon2019/"
-     * }
-     */
-    &sct::Log {
-        description: "Google 'Argon2019' log",
-        url: "ct.googleapis.com/logs/argon2019/",
-        operated_by: "Google",
-        key: b"\x04\x23\x73\x10\x9b\xe1\xf3\x5e\xf6\x98\x6b\x69\x95\x96\x10\x78\xce\x49\xdb\xb4\x04\xfc\x71\x2c\x5a\x92\x60\x68\x25\xc0\x4a\x1a\xa1\xb0\x61\x2d\x1b\x87\x14\xa9\xba\xf0\x01\x33\x59\x1d\x05\x30\xe9\x42\x15\xe7\x55\xd7\x2a\xf8\xb4\xa2\xba\x45\xc9\x46\x91\x87\x56",
-        id: [ 0x63, 0xf2, 0xdb, 0xcd, 0xe8, 0x3b, 0xcc, 0x2c, 0xcf, 0x0b, 0x72, 0x84, 0x27, 0x57, 0x6b, 0x33, 0xa4, 0x8d, 0x61, 0x77, 0x8f, 0xbd, 0x75, 0xa6, 0x38, 0xb1, 0xc7, 0x68, 0x54, 0x4b, 0xd8, 0x8d ],
-        max_merge_delay: 86400,
-    },
-
-    /*
-     * {
      *   "description": "Google 'Aviator' log",
-     *   "dns_api_endpoint": "aviator.ct.googleapis.com",
      *   "final_sth": {
      *     "sha256_root_hash": "LcGcZRsm+LGYmrlyC5LXhV1T6OD8iH5dNlb0sEJl9bA=",
      *     "timestamp": 1480512258330,
@@ -318,7 +347,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Sectigo 'Mammoth' CT log",
-     *   "dns_api_endpoint": "comodo-mammoth.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7+R9dC4VFbbpuyOL+yy14ceAmEf7QGlo/EmtYU6DRzwat43f/3swtLr/L8ugFOOt1YU/RFmMjGCL17ixv66MZw==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -338,43 +366,41 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
-     *   "description": "DigiCert Nessie2018 Log",
-     *   "dns_api_endpoint": "digicert-nessie2018.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEVqpLa2W+Rz1XDZPBIyKJO+KKFOYZTj9MpJWnZeFUqzc5aivOiWEVhs8Gy2AlH3irWPFjIZPZMs3Dv7M+0LbPyQ==",
+     *   "description": "Cloudflare 'Nimbus2023' Log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEi/8tkhjLRp0SXrlZdTzNkTd6HqmcmXiDJz3fAdWLgOhjmv4mohvRhwXul9bgW0ODgRwC9UGAgH/vpGHPvIS1qA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     2
+     *     1
      *   ],
-     *   "url": "nessie2018.ct.digicert.com/log/"
+     *   "url": "ct.cloudflare.com/logs/nimbus2023/"
      * }
      */
     &sct::Log {
-        description: "DigiCert Nessie2018 Log",
-        url: "nessie2018.ct.digicert.com/log/",
-        operated_by: "DigiCert",
-        key: b"\x04\x56\xaa\x4b\x6b\x65\xbe\x47\x3d\x57\x0d\x93\xc1\x23\x22\x89\x3b\xe2\x8a\x14\xe6\x19\x4e\x3f\x4c\xa4\x95\xa7\x65\xe1\x54\xab\x37\x39\x6a\x2b\xce\x89\x61\x15\x86\xcf\x06\xcb\x60\x25\x1f\x78\xab\x58\xf1\x63\x21\x93\xd9\x32\xcd\xc3\xbf\xb3\x3e\xd0\xb6\xcf\xc9",
-        id: [ 0x6f, 0xf1, 0x41, 0xb5, 0x64, 0x7e, 0x42, 0x22, 0xf7, 0xef, 0x05, 0x2c, 0xef, 0xae, 0x7c, 0x21, 0xfd, 0x60, 0x8e, 0x27, 0xd2, 0xaf, 0x5a, 0x6e, 0x9f, 0x4b, 0x8a, 0x37, 0xd6, 0x63, 0x3e, 0xe5 ],
+        description: "Cloudflare 'Nimbus2023' Log",
+        url: "ct.cloudflare.com/logs/nimbus2023/",
+        operated_by: "Cloudflare",
+        key: b"\x04\x8b\xff\x2d\x92\x18\xcb\x46\x9d\x12\x5e\xb9\x59\x75\x3c\xcd\x91\x37\x7a\x1e\xa9\x9c\x99\x78\x83\x27\x3d\xdf\x01\xd5\x8b\x80\xe8\x63\x9a\xfe\x26\xa2\x1b\xd1\x87\x05\xee\x97\xd6\xe0\x5b\x43\x83\x81\x1c\x02\xf5\x41\x80\x80\x7f\xef\xa4\x61\xcf\xbc\x84\xb5\xa8",
+        id: [ 0x7a, 0x32, 0x8c, 0x54, 0xd8, 0xb7, 0x2d, 0xb6, 0x20, 0xea, 0x38, 0xe0, 0x52, 0x1e, 0xe9, 0x84, 0x16, 0x70, 0x32, 0x13, 0x85, 0x4d, 0x3b, 0xd2, 0x2b, 0xc1, 0x3a, 0x57, 0xa3, 0x52, 0xeb, 0x52 ],
         max_merge_delay: 86400,
     },
 
     /*
      * {
-     *   "description": "Cloudflare 'Nimbus2019' Log",
-     *   "dns_api_endpoint": "cloudflare-nimbus2019.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkZHz1v5r8a9LmXSMegYZAg4UW+Ug56GtNfJTDNFZuubEJYgWf4FcC5D+ZkYwttXTDSo4OkanG9b3AI4swIQ28g==",
+     *   "description": "Google 'Xenon2021' log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAER+1MInu8Q39BwDZ5Rp9TwXhwm3ktvgJzpk/r7dDgGk7ZacMm3ljfcoIvP1E72T8jvyLT1bvdapylajZcTH6W5g==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     1
+     *     0
      *   ],
-     *   "url": "ct.cloudflare.com/logs/nimbus2019/"
+     *   "url": "ct.googleapis.com/logs/xenon2021/"
      * }
      */
     &sct::Log {
-        description: "Cloudflare 'Nimbus2019' Log",
-        url: "ct.cloudflare.com/logs/nimbus2019/",
-        operated_by: "Cloudflare",
-        key: b"\x04\x91\x91\xf3\xd6\xfe\x6b\xf1\xaf\x4b\x99\x74\x8c\x7a\x06\x19\x02\x0e\x14\x5b\xe5\x20\xe7\xa1\xad\x35\xf2\x53\x0c\xd1\x59\xba\xe6\xc4\x25\x88\x16\x7f\x81\x5c\x0b\x90\xfe\x66\x46\x30\xb6\xd5\xd3\x0d\x2a\x38\x3a\x46\xa7\x1b\xd6\xf7\x00\x8e\x2c\xc0\x84\x36\xf2",
-        id: [ 0x74, 0x7e, 0xda, 0x83, 0x31, 0xad, 0x33, 0x10, 0x91, 0x21, 0x9c, 0xce, 0x25, 0x4f, 0x42, 0x70, 0xc2, 0xbf, 0xfd, 0x5e, 0x42, 0x20, 0x08, 0xc6, 0x37, 0x35, 0x79, 0xe6, 0x10, 0x7b, 0xcc, 0x56 ],
+        description: "Google 'Xenon2021' log",
+        url: "ct.googleapis.com/logs/xenon2021/",
+        operated_by: "Google",
+        key: b"\x04\x47\xed\x4c\x22\x7b\xbc\x43\x7f\x41\xc0\x36\x79\x46\x9f\x53\xc1\x78\x70\x9b\x79\x2d\xbe\x02\x73\xa6\x4f\xeb\xed\xd0\xe0\x1a\x4e\xd9\x69\xc3\x26\xde\x58\xdf\x72\x82\x2f\x3f\x51\x3b\xd9\x3f\x23\xbf\x22\xd3\xd5\xbb\xdd\x6a\x9c\xa5\x6a\x36\x5c\x4c\x7e\x96\xe6",
+        id: [ 0x7d, 0x3e, 0xf2, 0xf8, 0x8f, 0xff, 0x88, 0x55, 0x68, 0x24, 0xc2, 0xc0, 0xca, 0x9e, 0x52, 0x89, 0x79, 0x2b, 0xc5, 0x0e, 0x78, 0x09, 0x7f, 0x2e, 0x6a, 0x97, 0x68, 0x99, 0x7e, 0x22, 0xf0, 0xd7 ],
         max_merge_delay: 86400,
     },
 
@@ -402,7 +428,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Log Server 2",
-     *   "dns_api_endpoint": "digicert2.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzF05L2a4TH/BLgOhNKPoioYCrkoRxvcmajeb8Dj4XQmNY+gxa4Zmz3mzJTwe33i0qMVp+rfwgnliQ/bM/oFmhA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -422,29 +447,27 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
-     *   "description": "Google 'Argon2018' log",
-     *   "dns_api_endpoint": "argon2018.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE0gBVBa3VR7QZu82V+ynXWD14JM3ORp37MtRxTmACJV5ZPtfUA7htQ2hofuigZQs+bnFZkje+qejxoyvk2Q1VaA==",
+     *   "description": "Let's Encrypt 'Oak2021' log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAELsYzGMNwo8rBIlaklBIdmD2Ofn6HkfrjK0Ukz1uOIUC6Lm0jTITCXhoIdjs7JkyXnwuwYiJYiH7sE1YeKu8k9w==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     0
+     *     10
      *   ],
-     *   "url": "ct.googleapis.com/logs/argon2018/"
+     *   "url": "oak.ct.letsencrypt.org/2021/"
      * }
      */
     &sct::Log {
-        description: "Google 'Argon2018' log",
-        url: "ct.googleapis.com/logs/argon2018/",
-        operated_by: "Google",
-        key: b"\x04\xd2\x00\x55\x05\xad\xd5\x47\xb4\x19\xbb\xcd\x95\xfb\x29\xd7\x58\x3d\x78\x24\xcd\xce\x46\x9d\xfb\x32\xd4\x71\x4e\x60\x02\x25\x5e\x59\x3e\xd7\xd4\x03\xb8\x6d\x43\x68\x68\x7e\xe8\xa0\x65\x0b\x3e\x6e\x71\x59\x92\x37\xbe\xa9\xe8\xf1\xa3\x2b\xe4\xd9\x0d\x55\x68",
-        id: [ 0xa4, 0x50, 0x12, 0x69, 0x05, 0x5a, 0x15, 0x54, 0x5e, 0x62, 0x11, 0xab, 0x37, 0xbc, 0x10, 0x3f, 0x62, 0xae, 0x55, 0x76, 0xa4, 0x5e, 0x4b, 0x17, 0x14, 0x45, 0x3e, 0x1b, 0x22, 0x10, 0x6a, 0x25 ],
+        description: "Let's Encrypt 'Oak2021' log",
+        url: "oak.ct.letsencrypt.org/2021/",
+        operated_by: "Let's Encrypt",
+        key: b"\x04\x2e\xc6\x33\x18\xc3\x70\xa3\xca\xc1\x22\x56\xa4\x94\x12\x1d\x98\x3d\x8e\x7e\x7e\x87\x91\xfa\xe3\x2b\x45\x24\xcf\x5b\x8e\x21\x40\xba\x2e\x6d\x23\x4c\x84\xc2\x5e\x1a\x08\x76\x3b\x3b\x26\x4c\x97\x9f\x0b\xb0\x62\x22\x58\x88\x7e\xec\x13\x56\x1e\x2a\xef\x24\xf7",
+        id: [ 0x94, 0x20, 0xbc, 0x1e, 0x8e, 0xd5, 0x8d, 0x6c, 0x88, 0x73, 0x1f, 0x82, 0x8b, 0x22, 0x2c, 0x0d, 0xd1, 0xda, 0x4d, 0x5e, 0x6c, 0x4f, 0x94, 0x3d, 0x61, 0xdb, 0x4e, 0x2f, 0x58, 0x4d, 0xa2, 0xc2 ],
         max_merge_delay: 86400,
     },
 
     /*
      * {
      *   "description": "Google 'Pilot' log",
-     *   "dns_api_endpoint": "pilot.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEfahLEimAoz2t01p3uMziiLOl/fHTDM0YDOhBRuiBARsV4UvxG2LdNgoIGLrtCzWE0J5APC2em4JlvR8EEEFMoA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -464,8 +487,27 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
+     *   "description": "Google 'Xenon2023' log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEchY+C+/vzj5g3ZXLY3q5qY1Kb2zcYYCmRV4vg6yU84WI0KV00HuO/8XuQqLwLZPjwtCymeLhQunSxgAnaXSuzg==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     0
+     *   ],
+     *   "url": "ct.googleapis.com/logs/xenon2023/"
+     * }
+     */
+    &sct::Log {
+        description: "Google 'Xenon2023' log",
+        url: "ct.googleapis.com/logs/xenon2023/",
+        operated_by: "Google",
+        key: b"\x04\x72\x16\x3e\x0b\xef\xef\xce\x3e\x60\xdd\x95\xcb\x63\x7a\xb9\xa9\x8d\x4a\x6f\x6c\xdc\x61\x80\xa6\x45\x5e\x2f\x83\xac\x94\xf3\x85\x88\xd0\xa5\x74\xd0\x7b\x8e\xff\xc5\xee\x42\xa2\xf0\x2d\x93\xe3\xc2\xd0\xb2\x99\xe2\xe1\x42\xe9\xd2\xc6\x00\x27\x69\x74\xae\xce",
+        id: [ 0xad, 0xf7, 0xbe, 0xfa, 0x7c, 0xff, 0x10, 0xc8, 0x8b, 0x9d, 0x3d, 0x9c, 0x1e, 0x3e, 0x18, 0x6a, 0xb4, 0x67, 0x29, 0x5d, 0xcf, 0xb1, 0x0c, 0x24, 0xca, 0x85, 0x86, 0x34, 0xeb, 0xdc, 0x82, 0x8a ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
      *   "description": "Google 'Argon2020' log",
-     *   "dns_api_endpoint": "argon2020.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6Tx2p1yKY4015NyIYvdrk36es0uAc1zA4PQ+TGRY+3ZjUTIYY9Wyu+3q/147JG4vNVKLtDWarZwVqGkg6lAYzA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -485,9 +527,9 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
-     *   "description": "Google 'Skydiver' log",
-     *   "dns_api_endpoint": "skydiver.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEEmyGDvYXsRJsNyXSrYc9DjHsIa2xzb4UR7ZxVoV6mrc9iZB7xjI6+NrOiwH+P/xxkRmOFG6Jel20q37hTh58rA==",
+     *   "description": "DigiCert Yeti2018 Log",
+     *   "dns_api_endpoint": "digicert-yeti2018.ct.googleapis.com",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESYlKFDLLFmA9JScaiaNnqlU8oWDytxIYMfswHy9Esg0aiX+WnP/yj4O0ViEHtLwbmOQeSWBGkIu9YK9CLeer+g==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
      *     0
@@ -506,29 +548,7 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
-     *   "description": "DigiCert Yeti2018 Log",
-     *   "dns_api_endpoint": "digicert-yeti2018.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESYlKFDLLFmA9JScaiaNnqlU8oWDytxIYMfswHy9Esg0aiX+WnP/yj4O0ViEHtLwbmOQeSWBGkIu9YK9CLeer+g==",
-     *   "maximum_merge_delay": 86400,
-     *   "operated_by": [
-     *     2
-     *   ],
-     *   "url": "yeti2018.ct.digicert.com/log/"
-     * }
-     */
-    &sct::Log {
-        description: "DigiCert Yeti2018 Log",
-        url: "yeti2018.ct.digicert.com/log/",
-        operated_by: "DigiCert",
-        key: b"\x04\x49\x89\x4a\x14\x32\xcb\x16\x60\x3d\x25\x27\x1a\x89\xa3\x67\xaa\x55\x3c\xa1\x60\xf2\xb7\x12\x18\x31\xfb\x30\x1f\x2f\x44\xb2\x0d\x1a\x89\x7f\x96\x9c\xff\xf2\x8f\x83\xb4\x56\x21\x07\xb4\xbc\x1b\x98\xe4\x1e\x49\x60\x46\x90\x8b\xbd\x60\xaf\x42\x2d\xe7\xab\xfa",
-        id: [ 0xc1, 0x16, 0x4a, 0xe0, 0xa7, 0x72, 0xd2, 0xd4, 0x39, 0x2d, 0xc8, 0x0a, 0xc1, 0x07, 0x70, 0xd4, 0xf0, 0xc4, 0x9b, 0xde, 0x99, 0x1a, 0x48, 0x40, 0xc1, 0xfa, 0x07, 0x51, 0x64, 0xf6, 0x33, 0x60 ],
-        max_merge_delay: 86400,
-    },
-
-    /*
-     * {
      *   "description": "DigiCert Nessie2020 Log",
-     *   "dns_api_endpoint": "digicert-nessie2020.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE4hHIyMVIrR9oShgbQMYEk8WX1lmkfFKB448Gn93KbsZnnwljDHY6MQqEnWfKGgMOq0gh3QK48c5ZB3UKSIFZ4g==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -548,28 +568,21 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
-     *   "description": "Cloudflare 'Nimbus2018' Log",
-     *   "dns_api_endpoint": "cloudflare-nimbus2018.ct.googleapis.com",
-     *   "final_sth": {
-     *     "sha256_root_hash": "kCdsLaegBfSkoDDRuglFDxiCXZbuRmTgki65u6XsPTU=",
-     *     "timestamp": 1546451090108,
-     *     "tree_head_signature": "BAMARjBEAiBH1be4Jqid5mFpCdxbht8sBJd01WbEl/rWxFHx60G1MwIgVXzN3ubHGZM2BisfGamLUceFpcDAjQhqv8stbGFbCfw=",
-     *     "tree_size": 265514260
-     *   },
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAsVpWvrH3Ke0VRaMg9ZQoQjb5g/xh1z3DDa6IuxY5DyPsk6brlvrUNXZzoIg0DcvFiAn2kd6xmu4Obk5XA/nRg==",
+     *   "description": "Let's Encrypt 'Oak2022' log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEhjyxDVIjWt5u9sB/o2S8rcGJ2pdZTGA8+IpXhI/tvKBjElGE5r3de4yAfeOPhqTqqc+o7vPgXnDgu/a9/B+RLg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     1
+     *     10
      *   ],
-     *   "url": "ct.cloudflare.com/logs/nimbus2018/"
+     *   "url": "oak.ct.letsencrypt.org/2022/"
      * }
      */
     &sct::Log {
-        description: "Cloudflare 'Nimbus2018' Log",
-        url: "ct.cloudflare.com/logs/nimbus2018/",
-        operated_by: "Cloudflare",
-        key: b"\x04\x02\xc5\x69\x5a\xfa\xc7\xdc\xa7\xb4\x55\x16\x8c\x83\xd6\x50\xa1\x08\xdb\xe6\x0f\xf1\x87\x5c\xf7\x0c\x36\xba\x22\xec\x58\xe4\x3c\x8f\xb2\x4e\x9b\xae\x5b\xeb\x50\xd5\xd9\xce\x82\x20\xd0\x37\x2f\x16\x20\x27\xda\x47\x7a\xc6\x6b\xb8\x39\xb9\x39\x5c\x0f\xe7\x46",
-        id: [ 0xdb, 0x74, 0xaf, 0xee, 0xcb, 0x29, 0xec, 0xb1, 0xfe, 0xca, 0x3e, 0x71, 0x6d, 0x2c, 0xe5, 0xb9, 0xaa, 0xbb, 0x36, 0xf7, 0x84, 0x71, 0x83, 0xc7, 0x5d, 0x9d, 0x4f, 0x37, 0xb6, 0x1f, 0xbf, 0x64 ],
+        description: "Let's Encrypt 'Oak2022' log",
+        url: "oak.ct.letsencrypt.org/2022/",
+        operated_by: "Let's Encrypt",
+        key: b"\x04\x86\x3c\xb1\x0d\x52\x23\x5a\xde\x6e\xf6\xc0\x7f\xa3\x64\xbc\xad\xc1\x89\xda\x97\x59\x4c\x60\x3c\xf8\x8a\x57\x84\x8f\xed\xbc\xa0\x63\x12\x51\x84\xe6\xbd\xdd\x7b\x8c\x80\x7d\xe3\x8f\x86\xa4\xea\xa9\xcf\xa8\xee\xf3\xe0\x5e\x70\xe0\xbb\xf6\xbd\xfc\x1f\x91\x2e",
+        id: [ 0xdf, 0xa5, 0x5e, 0xab, 0x68, 0x82, 0x4f, 0x1f, 0x6c, 0xad, 0xee, 0xb8, 0x5f, 0x4e, 0x3e, 0x5a, 0xea, 0xcd, 0xa2, 0x12, 0xa4, 0x6a, 0x5e, 0x8e, 0x3b, 0x12, 0xc0, 0x20, 0x44, 0x5c, 0x2a, 0x73 ],
         max_merge_delay: 86400,
     },
 
@@ -580,24 +593,23 @@ pub static LOGS: [&sct::Log; 32] = [
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkZd/ow8X+FSVWAVSf8xzkFohcPph/x6pS1JHh7g1wnCZ5y/8Hk6jzJxs6t3YMAWz2CPd4VkCdxwKexGhcFxD9A==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     2
+     *     0
      *   ],
-     *   "url": "yeti2019.ct.digicert.com/log/"
+     *   "url": "ct.googleapis.com/logs/argon2023/"
      * }
      */
     &sct::Log {
-        description: "DigiCert Yeti2019 Log",
-        url: "yeti2019.ct.digicert.com/log/",
-        operated_by: "DigiCert",
-        key: b"\x04\x91\x97\x7f\xa3\x0f\x17\xf8\x54\x95\x58\x05\x52\x7f\xcc\x73\x90\x5a\x21\x70\xfa\x61\xff\x1e\xa9\x4b\x52\x47\x87\xb8\x35\xc2\x70\x99\xe7\x2f\xfc\x1e\x4e\xa3\xcc\x9c\x6c\xea\xdd\xd8\x30\x05\xb3\xd8\x23\xdd\xe1\x59\x02\x77\x1c\x0a\x7b\x11\xa1\x70\x5c\x43\xf4",
-        id: [ 0xe2, 0x69, 0x4b, 0xae, 0x26, 0xe8, 0xe9, 0x40, 0x09, 0xe8, 0x86, 0x1b, 0xb6, 0x3b, 0x83, 0xd4, 0x3e, 0xe7, 0xfe, 0x74, 0x88, 0xfb, 0xa4, 0x8f, 0x28, 0x93, 0x01, 0x9d, 0xdd, 0xf1, 0xdb, 0xfe ],
+        description: "Google 'Argon2023' log",
+        url: "ct.googleapis.com/logs/argon2023/",
+        operated_by: "Google",
+        key: b"\x04\xd0\x90\x8f\x64\x52\x4e\x42\xac\x84\xb6\x2e\x4c\xf2\x3d\x77\x00\xb3\x77\x08\x05\x47\xaa\x45\x4c\xe3\x2c\x8e\x70\xa5\x82\xbb\x6c\xb2\x7b\x9c\x98\x7a\xa0\xe9\x11\x76\x28\x00\xb2\x20\xb4\xcd\xd3\x98\x7b\x4d\x96\x27\xe6\xb7\xee\x22\x6a\xd1\xb0\x2e\x91\x77\x78",
+        id: [ 0xe8, 0x3e, 0xd0, 0xda, 0x3e, 0xf5, 0x06, 0x35, 0x32, 0xe7, 0x57, 0x28, 0xbc, 0x89, 0x6b, 0xc9, 0x03, 0xd3, 0xcb, 0xd1, 0x11, 0x6b, 0xec, 0xeb, 0x69, 0xe1, 0x77, 0x7d, 0x6d, 0x06, 0xbd, 0x6e ],
         max_merge_delay: 86400,
     },
 
     /*
      * {
      *   "description": "Google 'Rocketeer' log",
-     *   "dns_api_endpoint": "rocketeer.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIFsYyDzBi7MxCAC/oJBXK7dHjG+1aLCOkHjpoHPqTyghLpzA9BYbqvnV16mAw04vUjyYASVGJCUoI3ctBcJAeg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -618,7 +630,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Nessie2021 Log",
-     *   "dns_api_endpoint": "digicert-nessie2021.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9o7AiwrbGBIX6Lnc47I6OfLMdZnRzKoP5u072nBi6vpIOEooktTi1gNwlRPzGC2ySGfuc1xLDeaA/wSFGgpYFg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -639,7 +650,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Yeti2020 Log",
-     *   "dns_api_endpoint": "digicert-yeti2020.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEURAG+Zo0ac3n37ifZKUhBFEV6jfcCzGIRz3tsq8Ca9BP/5XUHy6ZiqsPaAEbVM0uI3Tm9U24RVBHR9JxDElPmg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -660,7 +670,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Google 'Argon2021' log",
-     *   "dns_api_endpoint": "argon2021.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAETeBmZOrzZKo4xYktx9gI2chEce3cw/tbr5xkoQlmhB18aKfsxD+MnILgGNl0FOm0eYGilFVi85wLRIOhK8lxKw==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -675,27 +684,6 @@ pub static LOGS: [&sct::Log; 32] = [
         operated_by: "Google",
         key: b"\x04\x4d\xe0\x66\x64\xea\xf3\x64\xaa\x38\xc5\x89\x2d\xc7\xd8\x08\xd9\xc8\x44\x71\xed\xdc\xc3\xfb\x5b\xaf\x9c\x64\xa1\x09\x66\x84\x1d\x7c\x68\xa7\xec\xc4\x3f\x8c\x9c\x82\xe0\x18\xd9\x74\x14\xe9\xb4\x79\x81\xa2\x94\x55\x62\xf3\x9c\x0b\x44\x83\xa1\x2b\xc9\x71\x2b",
         id: [ 0xf6, 0x5c, 0x94, 0x2f, 0xd1, 0x77, 0x30, 0x22, 0x14, 0x54, 0x18, 0x08, 0x30, 0x94, 0x56, 0x8e, 0xe3, 0x4d, 0x13, 0x19, 0x33, 0xbf, 0xdf, 0x0c, 0x2f, 0x20, 0x0b, 0xcc, 0x4e, 0xf1, 0x64, 0xe3 ],
-        max_merge_delay: 86400,
-    },
-
-    /*
-     * {
-     *   "description": "DigiCert Nessie2019 Log",
-     *   "dns_api_endpoint": "digicert-nessie2019.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEX+0nudCKImd7QCtelhMrDW0OXni5RE10tiiClZesmrwUk2iHLCoTHHVV+yg5D4n/rxCRVyRhikPpVDOLMLxJaA==",
-     *   "maximum_merge_delay": 86400,
-     *   "operated_by": [
-     *     2
-     *   ],
-     *   "url": "nessie2019.ct.digicert.com/log/"
-     * }
-     */
-    &sct::Log {
-        description: "DigiCert Nessie2019 Log",
-        url: "nessie2019.ct.digicert.com/log/",
-        operated_by: "DigiCert",
-        key: b"\x04\x5f\xed\x27\xb9\xd0\x8a\x22\x67\x7b\x40\x2b\x5e\x96\x13\x2b\x0d\x6d\x0e\x5e\x78\xb9\x44\x4d\x74\xb6\x28\x82\x95\x97\xac\x9a\xbc\x14\x93\x68\x87\x2c\x2a\x13\x1c\x75\x55\xfb\x28\x39\x0f\x89\xff\xaf\x10\x91\x57\x24\x61\x8a\x43\xe9\x54\x33\x8b\x30\xbc\x49\x68",
-        id: [ 0xfe, 0x44, 0x61, 0x08, 0xb1, 0xd0, 0x1a, 0xb7, 0x8a, 0x62, 0xcc, 0xfe, 0xab, 0x6a, 0xb2, 0xb2, 0xba, 0xbf, 0xf3, 0xab, 0xda, 0xd8, 0x0a, 0x4d, 0x8b, 0x30, 0xdf, 0x2d, 0x00, 0x08, 0x83, 0x0c ],
         max_merge_delay: 86400,
     },
 
