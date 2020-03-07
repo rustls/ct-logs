@@ -52,6 +52,11 @@ def convert_json(json):
 
         disqualification = lj.get('disqualified_at', None)
         if disqualification and time.time() > disqualification:
+            print('filtering out %r, disqualified on %s' % (
+                    lj['description'],
+                    time.ctime(disqualification),
+                ),
+                file=sys.stderr)
             continue
 
         log = Log(lj['description'],
