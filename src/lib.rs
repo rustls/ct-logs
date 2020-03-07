@@ -14,11 +14,10 @@
         unused_extern_crates,
         unused_qualifications)]
 
-pub static LOGS: [&sct::Log; 32] = [
+pub static LOGS: [&sct::Log; 33] = [
     /*
      * {
      *   "description": "Venafi Gen2 CT log",
-     *   "dns_api_endpoint": "venafi2.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEjicnerZVCXTrbEuUhGW85BXx6lrYfA43zro/bAna5ymW00VQb94etBzSg4j/KS/Oqf/fNN51D8DMGA2ULvw3AQ==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -39,7 +38,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Google 'Xenon2020' log",
-     *   "dns_api_endpoint": "xenon2020.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEZU75VqjyzSTgFZKAnWg1QeYfFFIRZTMK7q3kWWZsmHhQdrBYnHRZ3OA4kUeUx0JN+xX+dSgt1ruqUhhl7jOvmw==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -59,29 +57,7 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
-     *   "description": "Google 'Xenon2019' log",
-     *   "dns_api_endpoint": "xenon2019.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE/XyDwqzXL9i2GTjMYkqaEyiRL0Dy9sHq/BTebFdshbvCaXXEh6mjUK0Yy+AsDcI4MpzF1l7Kded2MD5zi420gA==",
-     *   "maximum_merge_delay": 86400,
-     *   "operated_by": [
-     *     0
-     *   ],
-     *   "url": "ct.googleapis.com/logs/xenon2019/"
-     * }
-     */
-    &sct::Log {
-        description: "Google 'Xenon2019' log",
-        url: "ct.googleapis.com/logs/xenon2019/",
-        operated_by: "Google",
-        key: b"\x04\xfd\x7c\x83\xc2\xac\xd7\x2f\xd8\xb6\x19\x38\xcc\x62\x4a\x9a\x13\x28\x91\x2f\x40\xf2\xf6\xc1\xea\xfc\x14\xde\x6c\x57\x6c\x85\xbb\xc2\x69\x75\xc4\x87\xa9\xa3\x50\xad\x18\xcb\xe0\x2c\x0d\xc2\x38\x32\x9c\xc5\xd6\x5e\xca\x75\xe7\x76\x30\x3e\x73\x8b\x8d\xb4\x80",
-        id: [ 0x08, 0x41, 0x14, 0x98, 0x00, 0x71, 0x53, 0x2c, 0x16, 0x19, 0x04, 0x60, 0xbc, 0xfc, 0x47, 0xfd, 0xc2, 0x65, 0x3a, 0xfa, 0x29, 0x2c, 0x72, 0xb3, 0x7f, 0xf8, 0x63, 0xae, 0x29, 0xcc, 0xc9, 0xf0 ],
-        max_merge_delay: 86400,
-    },
-
-    /*
-     * {
      *   "description": "DigiCert Yeti2022 Log",
-     *   "dns_api_endpoint": "digicert-yeti2022.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEn/jYHd77W1G1+131td5mEbCdX/1v/KiYW5hPLcOROvv+xA8Nw2BDjB7y+RGyutD2vKXStp/5XIeiffzUfdYTJg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -102,7 +78,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Google 'Icarus' log",
-     *   "dns_api_endpoint": "icarus.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAETtK8v7MICve56qTHHDhhBOuV4IlUaESxZryCfk9QbG9co/CqPvTsgPDbCpp6oFtyAHwlDhnvr7JijXRD9Cb2FA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -122,8 +97,27 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
+     *   "description": "Google 'Argon2022' log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEeIPc6fGmuBg6AJkv/z7NFckmHvf/OqmjchZJ6wm2qN200keRDg352dWpi7CHnSV51BpQYAj1CQY5JuRAwrrDwg==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     0
+     *   ],
+     *   "url": "ct.googleapis.com/logs/argon2022/"
+     * }
+     */
+    &sct::Log {
+        description: "Google 'Argon2022' log",
+        url: "ct.googleapis.com/logs/argon2022/",
+        operated_by: "Google",
+        key: b"\x04\x78\x83\xdc\xe9\xf1\xa6\xb8\x18\x3a\x00\x99\x2f\xff\x3e\xcd\x15\xc9\x26\x1e\xf7\xff\x3a\xa9\xa3\x72\x16\x49\xeb\x09\xb6\xa8\xdd\xb4\xd2\x47\x91\x0e\x0d\xf9\xd9\xd5\xa9\x8b\xb0\x87\x9d\x25\x79\xd4\x1a\x50\x60\x08\xf5\x09\x06\x39\x26\xe4\x40\xc2\xba\xc3\xc2",
+        id: [ 0x29, 0x79, 0xbe, 0xf0, 0x9e, 0x39, 0x39, 0x21, 0xf0, 0x56, 0x73, 0x9f, 0x63, 0xa5, 0x77, 0xe5, 0xbe, 0x57, 0x7d, 0x9c, 0x60, 0x0a, 0xf8, 0xf9, 0x4d, 0x5d, 0x26, 0x5c, 0x25, 0x5d, 0xc7, 0x84 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
      *   "description": "DigiCert Yeti2023 Log",
-     *   "dns_api_endpoint": "digicert-yeti2023.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEfQ0DsdWYitzwFTvG3F4Nbj8Nv5XIVYzQpkyWsU4nuSYlmcwrAp6m092fsdXEw6w1BAeHlzaqrSgNfyvZaJ9y0Q==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -144,7 +138,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Cloudflare 'Nimbus2022' Log",
-     *   "dns_api_endpoint": "cloudflare-nimbus2022.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAESLJHTlAycmJKDQxIv60pZG8g33lSYxYpCi5gteI6HLevWbFVCdtZx+m9b+0LrwWWl/87mkNN6xE0M4rnrIPA/w==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -165,7 +158,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Cloudflare 'Nimbus2021' Log",
-     *   "dns_api_endpoint": "cloudflare-nimbus2021.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAExpon7ipsqehIeU1bmpog9TFo4Pk8+9oN8OYHl1Q2JGVXnkVFnuuvPgSo2Ep+6vLffNLcmEbxOucz03sFiematg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -186,7 +178,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Google 'Xenon2022' log",
-     *   "dns_api_endpoint": "xenon2022.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE+WS9FSxAYlCVEzg8xyGwOrmPonoV14nWjjETAIdZvLvukPzIWBMKv6tDNlQjpIHNrUcUt1igRPpqoKDXw2MeKw==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -207,7 +198,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Nessie2022 Log",
-     *   "dns_api_endpoint": "digicert-nessie2022.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEJyTdaAMoy/5jvg4RR019F2ihEV1McclBKMe2okuX7MCv/C87v+nxsfz1Af+p+0lADGMkmNd5LqZVqxbGvlHYcQ==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -228,7 +218,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Sectigo 'Sabre' CT log",
-     *   "dns_api_endpoint": "comodo-sabre.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE8m/SiQ8/xfiHHqtls9m7FyOMBg4JVZY9CgiixXGz0akvKD6DEL8S0ERmFe9U4ZiA0M4kbT5nmuk3I85Sk4bagA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -249,7 +238,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Log Server",
-     *   "dns_api_endpoint": "digicert.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAkbFvhu7gkAW6MHSrBlpE1n4+HCFRkC5OLAjgqhkTH+/uzSfSl8ois8ZxAD2NgaTZe1M9akhYlrYkes4JECs6A==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -270,7 +258,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Yeti2021 Log",
-     *   "dns_api_endpoint": "digicert-yeti2021.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6J4EbcpIAl1+AkSRsbhoY5oRTj3VoFfaf1DlQkfi7Rbe/HcjfVtrwN8jaC+tQDGjF+dqvKhWJAQ6Q6ev6q9Mew==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -291,7 +278,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Cloudflare 'Nimbus2020' Log",
-     *   "dns_api_endpoint": "cloudflare-nimbus2020.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE01EAhx4o0zPQrXTcYjgCt4MVFsT0Pwjzb1RwrM0lhWDlxAYPP6/gyMCXNkOn/7KFsjL7rwk78tHMpY8rXn8AYg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -311,29 +297,7 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
-     *   "description": "Google 'Argon2019' log",
-     *   "dns_api_endpoint": "argon2019.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEI3MQm+HzXvaYa2mVlhB4zknbtAT8cSxakmBoJcBKGqGwYS0bhxSpuvABM1kdBTDpQhXnVdcq+LSiukXJRpGHVg==",
-     *   "maximum_merge_delay": 86400,
-     *   "operated_by": [
-     *     0
-     *   ],
-     *   "url": "ct.googleapis.com/logs/argon2019/"
-     * }
-     */
-    &sct::Log {
-        description: "Google 'Argon2019' log",
-        url: "ct.googleapis.com/logs/argon2019/",
-        operated_by: "Google",
-        key: b"\x04\x23\x73\x10\x9b\xe1\xf3\x5e\xf6\x98\x6b\x69\x95\x96\x10\x78\xce\x49\xdb\xb4\x04\xfc\x71\x2c\x5a\x92\x60\x68\x25\xc0\x4a\x1a\xa1\xb0\x61\x2d\x1b\x87\x14\xa9\xba\xf0\x01\x33\x59\x1d\x05\x30\xe9\x42\x15\xe7\x55\xd7\x2a\xf8\xb4\xa2\xba\x45\xc9\x46\x91\x87\x56",
-        id: [ 0x63, 0xf2, 0xdb, 0xcd, 0xe8, 0x3b, 0xcc, 0x2c, 0xcf, 0x0b, 0x72, 0x84, 0x27, 0x57, 0x6b, 0x33, 0xa4, 0x8d, 0x61, 0x77, 0x8f, 0xbd, 0x75, 0xa6, 0x38, 0xb1, 0xc7, 0x68, 0x54, 0x4b, 0xd8, 0x8d ],
-        max_merge_delay: 86400,
-    },
-
-    /*
-     * {
      *   "description": "Google 'Aviator' log",
-     *   "dns_api_endpoint": "aviator.ct.googleapis.com",
      *   "final_sth": {
      *     "sha256_root_hash": "LcGcZRsm+LGYmrlyC5LXhV1T6OD8iH5dNlb0sEJl9bA=",
      *     "timestamp": 1480512258330,
@@ -360,7 +324,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Sectigo 'Mammoth' CT log",
-     *   "dns_api_endpoint": "comodo-mammoth.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE7+R9dC4VFbbpuyOL+yy14ceAmEf7QGlo/EmtYU6DRzwat43f/3swtLr/L8ugFOOt1YU/RFmMjGCL17ixv66MZw==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -380,29 +343,7 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
-     *   "description": "Cloudflare 'Nimbus2019' Log",
-     *   "dns_api_endpoint": "cloudflare-nimbus2019.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkZHz1v5r8a9LmXSMegYZAg4UW+Ug56GtNfJTDNFZuubEJYgWf4FcC5D+ZkYwttXTDSo4OkanG9b3AI4swIQ28g==",
-     *   "maximum_merge_delay": 86400,
-     *   "operated_by": [
-     *     1
-     *   ],
-     *   "url": "ct.cloudflare.com/logs/nimbus2019/"
-     * }
-     */
-    &sct::Log {
-        description: "Cloudflare 'Nimbus2019' Log",
-        url: "ct.cloudflare.com/logs/nimbus2019/",
-        operated_by: "Cloudflare",
-        key: b"\x04\x91\x91\xf3\xd6\xfe\x6b\xf1\xaf\x4b\x99\x74\x8c\x7a\x06\x19\x02\x0e\x14\x5b\xe5\x20\xe7\xa1\xad\x35\xf2\x53\x0c\xd1\x59\xba\xe6\xc4\x25\x88\x16\x7f\x81\x5c\x0b\x90\xfe\x66\x46\x30\xb6\xd5\xd3\x0d\x2a\x38\x3a\x46\xa7\x1b\xd6\xf7\x00\x8e\x2c\xc0\x84\x36\xf2",
-        id: [ 0x74, 0x7e, 0xda, 0x83, 0x31, 0xad, 0x33, 0x10, 0x91, 0x21, 0x9c, 0xce, 0x25, 0x4f, 0x42, 0x70, 0xc2, 0xbf, 0xfd, 0x5e, 0x42, 0x20, 0x08, 0xc6, 0x37, 0x35, 0x79, 0xe6, 0x10, 0x7b, 0xcc, 0x56 ],
-        max_merge_delay: 86400,
-    },
-
-    /*
-     * {
      *   "description": "Cloudflare 'Nimbus2023' Log",
-     *   "dns_api_endpoint": "cloudflare-nimbus2023.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEi/8tkhjLRp0SXrlZdTzNkTd6HqmcmXiDJz3fAdWLgOhjmv4mohvRhwXul9bgW0ODgRwC9UGAgH/vpGHPvIS1qA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -423,7 +364,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Google 'Xenon2021' log",
-     *   "dns_api_endpoint": "xenon2021.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAER+1MInu8Q39BwDZ5Rp9TwXhwm3ktvgJzpk/r7dDgGk7ZacMm3ljfcoIvP1E72T8jvyLT1bvdapylajZcTH6W5g==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -444,7 +384,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Log Server 2",
-     *   "dns_api_endpoint": "digicert2.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzF05L2a4TH/BLgOhNKPoioYCrkoRxvcmajeb8Dj4XQmNY+gxa4Zmz3mzJTwe33i0qMVp+rfwgnliQ/bM/oFmhA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -464,8 +403,27 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
+     *   "description": "Let's Encrypt 'Oak2021' log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAELsYzGMNwo8rBIlaklBIdmD2Ofn6HkfrjK0Ukz1uOIUC6Lm0jTITCXhoIdjs7JkyXnwuwYiJYiH7sE1YeKu8k9w==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     10
+     *   ],
+     *   "url": "oak.ct.letsencrypt.org/2021/"
+     * }
+     */
+    &sct::Log {
+        description: "Let's Encrypt 'Oak2021' log",
+        url: "oak.ct.letsencrypt.org/2021/",
+        operated_by: "Let's Encrypt",
+        key: b"\x04\x2e\xc6\x33\x18\xc3\x70\xa3\xca\xc1\x22\x56\xa4\x94\x12\x1d\x98\x3d\x8e\x7e\x7e\x87\x91\xfa\xe3\x2b\x45\x24\xcf\x5b\x8e\x21\x40\xba\x2e\x6d\x23\x4c\x84\xc2\x5e\x1a\x08\x76\x3b\x3b\x26\x4c\x97\x9f\x0b\xb0\x62\x22\x58\x88\x7e\xec\x13\x56\x1e\x2a\xef\x24\xf7",
+        id: [ 0x94, 0x20, 0xbc, 0x1e, 0x8e, 0xd5, 0x8d, 0x6c, 0x88, 0x73, 0x1f, 0x82, 0x8b, 0x22, 0x2c, 0x0d, 0xd1, 0xda, 0x4d, 0x5e, 0x6c, 0x4f, 0x94, 0x3d, 0x61, 0xdb, 0x4e, 0x2f, 0x58, 0x4d, 0xa2, 0xc2 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
      *   "description": "Google 'Pilot' log",
-     *   "dns_api_endpoint": "pilot.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEfahLEimAoz2t01p3uMziiLOl/fHTDM0YDOhBRuiBARsV4UvxG2LdNgoIGLrtCzWE0J5APC2em4JlvR8EEEFMoA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -485,8 +443,27 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
+     *   "description": "Google 'Xenon2023' log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEchY+C+/vzj5g3ZXLY3q5qY1Kb2zcYYCmRV4vg6yU84WI0KV00HuO/8XuQqLwLZPjwtCymeLhQunSxgAnaXSuzg==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     0
+     *   ],
+     *   "url": "ct.googleapis.com/logs/xenon2023/"
+     * }
+     */
+    &sct::Log {
+        description: "Google 'Xenon2023' log",
+        url: "ct.googleapis.com/logs/xenon2023/",
+        operated_by: "Google",
+        key: b"\x04\x72\x16\x3e\x0b\xef\xef\xce\x3e\x60\xdd\x95\xcb\x63\x7a\xb9\xa9\x8d\x4a\x6f\x6c\xdc\x61\x80\xa6\x45\x5e\x2f\x83\xac\x94\xf3\x85\x88\xd0\xa5\x74\xd0\x7b\x8e\xff\xc5\xee\x42\xa2\xf0\x2d\x93\xe3\xc2\xd0\xb2\x99\xe2\xe1\x42\xe9\xd2\xc6\x00\x27\x69\x74\xae\xce",
+        id: [ 0xad, 0xf7, 0xbe, 0xfa, 0x7c, 0xff, 0x10, 0xc8, 0x8b, 0x9d, 0x3d, 0x9c, 0x1e, 0x3e, 0x18, 0x6a, 0xb4, 0x67, 0x29, 0x5d, 0xcf, 0xb1, 0x0c, 0x24, 0xca, 0x85, 0x86, 0x34, 0xeb, 0xdc, 0x82, 0x8a ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
      *   "description": "Google 'Argon2020' log",
-     *   "dns_api_endpoint": "argon2020.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6Tx2p1yKY4015NyIYvdrk36es0uAc1zA4PQ+TGRY+3ZjUTIYY9Wyu+3q/147JG4vNVKLtDWarZwVqGkg6lAYzA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -507,7 +484,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Nessie2023 Log",
-     *   "dns_api_endpoint": "digicert-nessie2023.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEEXu8iQwSCRSf2CbITGpUpBtFVt8+I0IU0d1C36Lfe1+fbwdaI0Z5FktfM2fBoI1bXBd18k2ggKGYGgdZBgLKTg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -528,7 +504,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Google 'Skydiver' log",
-     *   "dns_api_endpoint": "skydiver.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEEmyGDvYXsRJsNyXSrYc9DjHsIa2xzb4UR7ZxVoV6mrc9iZB7xjI6+NrOiwH+P/xxkRmOFG6Jel20q37hTh58rA==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -549,7 +524,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Nessie2020 Log",
-     *   "dns_api_endpoint": "digicert-nessie2020.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE4hHIyMVIrR9oShgbQMYEk8WX1lmkfFKB448Gn93KbsZnnwljDHY6MQqEnWfKGgMOq0gh3QK48c5ZB3UKSIFZ4g==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -569,29 +543,67 @@ pub static LOGS: [&sct::Log; 32] = [
 
     /*
      * {
-     *   "description": "DigiCert Yeti2019 Log",
-     *   "dns_api_endpoint": "digicert-yeti2019.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEkZd/ow8X+FSVWAVSf8xzkFohcPph/x6pS1JHh7g1wnCZ5y/8Hk6jzJxs6t3YMAWz2CPd4VkCdxwKexGhcFxD9A==",
+     *   "description": "Let's Encrypt 'Oak2022' log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEhjyxDVIjWt5u9sB/o2S8rcGJ2pdZTGA8+IpXhI/tvKBjElGE5r3de4yAfeOPhqTqqc+o7vPgXnDgu/a9/B+RLg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
-     *     2
+     *     10
      *   ],
-     *   "url": "yeti2019.ct.digicert.com/log/"
+     *   "url": "oak.ct.letsencrypt.org/2022/"
      * }
      */
     &sct::Log {
-        description: "DigiCert Yeti2019 Log",
-        url: "yeti2019.ct.digicert.com/log/",
-        operated_by: "DigiCert",
-        key: b"\x04\x91\x97\x7f\xa3\x0f\x17\xf8\x54\x95\x58\x05\x52\x7f\xcc\x73\x90\x5a\x21\x70\xfa\x61\xff\x1e\xa9\x4b\x52\x47\x87\xb8\x35\xc2\x70\x99\xe7\x2f\xfc\x1e\x4e\xa3\xcc\x9c\x6c\xea\xdd\xd8\x30\x05\xb3\xd8\x23\xdd\xe1\x59\x02\x77\x1c\x0a\x7b\x11\xa1\x70\x5c\x43\xf4",
-        id: [ 0xe2, 0x69, 0x4b, 0xae, 0x26, 0xe8, 0xe9, 0x40, 0x09, 0xe8, 0x86, 0x1b, 0xb6, 0x3b, 0x83, 0xd4, 0x3e, 0xe7, 0xfe, 0x74, 0x88, 0xfb, 0xa4, 0x8f, 0x28, 0x93, 0x01, 0x9d, 0xdd, 0xf1, 0xdb, 0xfe ],
+        description: "Let's Encrypt 'Oak2022' log",
+        url: "oak.ct.letsencrypt.org/2022/",
+        operated_by: "Let's Encrypt",
+        key: b"\x04\x86\x3c\xb1\x0d\x52\x23\x5a\xde\x6e\xf6\xc0\x7f\xa3\x64\xbc\xad\xc1\x89\xda\x97\x59\x4c\x60\x3c\xf8\x8a\x57\x84\x8f\xed\xbc\xa0\x63\x12\x51\x84\xe6\xbd\xdd\x7b\x8c\x80\x7d\xe3\x8f\x86\xa4\xea\xa9\xcf\xa8\xee\xf3\xe0\x5e\x70\xe0\xbb\xf6\xbd\xfc\x1f\x91\x2e",
+        id: [ 0xdf, 0xa5, 0x5e, 0xab, 0x68, 0x82, 0x4f, 0x1f, 0x6c, 0xad, 0xee, 0xb8, 0x5f, 0x4e, 0x3e, 0x5a, 0xea, 0xcd, 0xa2, 0x12, 0xa4, 0x6a, 0x5e, 0x8e, 0x3b, 0x12, 0xc0, 0x20, 0x44, 0x5c, 0x2a, 0x73 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
+     *   "description": "Let's Encrypt 'Oak2020' log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEfzb42Zdr/h7hgqgDCo1vrNJqGqbcUvJGJEER9DDqp19W/wFSB0l166hD+U5cAXchpH8ZkBNUuvOHS0OnJ4oJrQ==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     10
+     *   ],
+     *   "url": "oak.ct.letsencrypt.org/2020/"
+     * }
+     */
+    &sct::Log {
+        description: "Let's Encrypt 'Oak2020' log",
+        url: "oak.ct.letsencrypt.org/2020/",
+        operated_by: "Let's Encrypt",
+        key: b"\x04\x7f\x36\xf8\xd9\x97\x6b\xfe\x1e\xe1\x82\xa8\x03\x0a\x8d\x6f\xac\xd2\x6a\x1a\xa6\xdc\x52\xf2\x46\x24\x41\x11\xf4\x30\xea\xa7\x5f\x56\xff\x01\x52\x07\x49\x75\xeb\xa8\x43\xf9\x4e\x5c\x01\x77\x21\xa4\x7f\x19\x90\x13\x54\xba\xf3\x87\x4b\x43\xa7\x27\x8a\x09\xad",
+        id: [ 0xe7, 0x12, 0xf2, 0xb0, 0x37, 0x7e, 0x1a, 0x62, 0xfb, 0x8e, 0xc9, 0x0c, 0x61, 0x84, 0xf1, 0xea, 0x7b, 0x37, 0xcb, 0x56, 0x1d, 0x11, 0x26, 0x5b, 0xf3, 0xe0, 0xf3, 0x4b, 0xf2, 0x41, 0x54, 0x6e ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
+     *   "description": "Google 'Argon2023' log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE0JCPZFJOQqyEti5M8j13ALN3CAVHqkVM4yyOcKWCu2yye5yYeqDpEXYoALIgtM3TmHtNlifmt+4iatGwLpF3eA==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     0
+     *   ],
+     *   "url": "ct.googleapis.com/logs/argon2023/"
+     * }
+     */
+    &sct::Log {
+        description: "Google 'Argon2023' log",
+        url: "ct.googleapis.com/logs/argon2023/",
+        operated_by: "Google",
+        key: b"\x04\xd0\x90\x8f\x64\x52\x4e\x42\xac\x84\xb6\x2e\x4c\xf2\x3d\x77\x00\xb3\x77\x08\x05\x47\xaa\x45\x4c\xe3\x2c\x8e\x70\xa5\x82\xbb\x6c\xb2\x7b\x9c\x98\x7a\xa0\xe9\x11\x76\x28\x00\xb2\x20\xb4\xcd\xd3\x98\x7b\x4d\x96\x27\xe6\xb7\xee\x22\x6a\xd1\xb0\x2e\x91\x77\x78",
+        id: [ 0xe8, 0x3e, 0xd0, 0xda, 0x3e, 0xf5, 0x06, 0x35, 0x32, 0xe7, 0x57, 0x28, 0xbc, 0x89, 0x6b, 0xc9, 0x03, 0xd3, 0xcb, 0xd1, 0x11, 0x6b, 0xec, 0xeb, 0x69, 0xe1, 0x77, 0x7d, 0x6d, 0x06, 0xbd, 0x6e ],
         max_merge_delay: 86400,
     },
 
     /*
      * {
      *   "description": "Google 'Rocketeer' log",
-     *   "dns_api_endpoint": "rocketeer.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEIFsYyDzBi7MxCAC/oJBXK7dHjG+1aLCOkHjpoHPqTyghLpzA9BYbqvnV16mAw04vUjyYASVGJCUoI3ctBcJAeg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -612,7 +624,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Nessie2021 Log",
-     *   "dns_api_endpoint": "digicert-nessie2021.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE9o7AiwrbGBIX6Lnc47I6OfLMdZnRzKoP5u072nBi6vpIOEooktTi1gNwlRPzGC2ySGfuc1xLDeaA/wSFGgpYFg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -633,7 +644,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "DigiCert Yeti2020 Log",
-     *   "dns_api_endpoint": "digicert-yeti2020.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEURAG+Zo0ac3n37ifZKUhBFEV6jfcCzGIRz3tsq8Ca9BP/5XUHy6ZiqsPaAEbVM0uI3Tm9U24RVBHR9JxDElPmg==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -654,7 +664,6 @@ pub static LOGS: [&sct::Log; 32] = [
     /*
      * {
      *   "description": "Google 'Argon2021' log",
-     *   "dns_api_endpoint": "argon2021.ct.googleapis.com",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAETeBmZOrzZKo4xYktx9gI2chEce3cw/tbr5xkoQlmhB18aKfsxD+MnILgGNl0FOm0eYGilFVi85wLRIOhK8lxKw==",
      *   "maximum_merge_delay": 86400,
      *   "operated_by": [
@@ -669,27 +678,6 @@ pub static LOGS: [&sct::Log; 32] = [
         operated_by: "Google",
         key: b"\x04\x4d\xe0\x66\x64\xea\xf3\x64\xaa\x38\xc5\x89\x2d\xc7\xd8\x08\xd9\xc8\x44\x71\xed\xdc\xc3\xfb\x5b\xaf\x9c\x64\xa1\x09\x66\x84\x1d\x7c\x68\xa7\xec\xc4\x3f\x8c\x9c\x82\xe0\x18\xd9\x74\x14\xe9\xb4\x79\x81\xa2\x94\x55\x62\xf3\x9c\x0b\x44\x83\xa1\x2b\xc9\x71\x2b",
         id: [ 0xf6, 0x5c, 0x94, 0x2f, 0xd1, 0x77, 0x30, 0x22, 0x14, 0x54, 0x18, 0x08, 0x30, 0x94, 0x56, 0x8e, 0xe3, 0x4d, 0x13, 0x19, 0x33, 0xbf, 0xdf, 0x0c, 0x2f, 0x20, 0x0b, 0xcc, 0x4e, 0xf1, 0x64, 0xe3 ],
-        max_merge_delay: 86400,
-    },
-
-    /*
-     * {
-     *   "description": "DigiCert Nessie2019 Log",
-     *   "dns_api_endpoint": "digicert-nessie2019.ct.googleapis.com",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEX+0nudCKImd7QCtelhMrDW0OXni5RE10tiiClZesmrwUk2iHLCoTHHVV+yg5D4n/rxCRVyRhikPpVDOLMLxJaA==",
-     *   "maximum_merge_delay": 86400,
-     *   "operated_by": [
-     *     2
-     *   ],
-     *   "url": "nessie2019.ct.digicert.com/log/"
-     * }
-     */
-    &sct::Log {
-        description: "DigiCert Nessie2019 Log",
-        url: "nessie2019.ct.digicert.com/log/",
-        operated_by: "DigiCert",
-        key: b"\x04\x5f\xed\x27\xb9\xd0\x8a\x22\x67\x7b\x40\x2b\x5e\x96\x13\x2b\x0d\x6d\x0e\x5e\x78\xb9\x44\x4d\x74\xb6\x28\x82\x95\x97\xac\x9a\xbc\x14\x93\x68\x87\x2c\x2a\x13\x1c\x75\x55\xfb\x28\x39\x0f\x89\xff\xaf\x10\x91\x57\x24\x61\x8a\x43\xe9\x54\x33\x8b\x30\xbc\x49\x68",
-        id: [ 0xfe, 0x44, 0x61, 0x08, 0xb1, 0xd0, 0x1a, 0xb7, 0x8a, 0x62, 0xcc, 0xfe, 0xab, 0x6a, 0xb2, 0xb2, 0xba, 0xbf, 0xf3, 0xab, 0xda, 0xd8, 0x0a, 0x4d, 0x8b, 0x30, 0xdf, 0x2d, 0x00, 0x08, 0x83, 0x0c ],
         max_merge_delay: 86400,
     },
 
