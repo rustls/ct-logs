@@ -14,27 +14,7 @@
         unused_extern_crates,
         unused_qualifications)]
 
-pub static LOGS: [&sct::Log; 33] = [
-    /*
-     * {
-     *   "description": "Venafi Gen2 CT log",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEjicnerZVCXTrbEuUhGW85BXx6lrYfA43zro/bAna5ymW00VQb94etBzSg4j/KS/Oqf/fNN51D8DMGA2ULvw3AQ==",
-     *   "maximum_merge_delay": 86400,
-     *   "operated_by": [
-     *     6
-     *   ],
-     *   "url": "ctlog-gen2.api.venafi.com/"
-     * }
-     */
-    &sct::Log {
-        description: "Venafi Gen2 CT log",
-        url: "ctlog-gen2.api.venafi.com/",
-        operated_by: "Venafi",
-        key: b"\x04\x8e\x27\x27\x7a\xb6\x55\x09\x74\xeb\x6c\x4b\x94\x84\x65\xbc\xe4\x15\xf1\xea\x5a\xd8\x7c\x0e\x37\xce\xba\x3f\x6c\x09\xda\xe7\x29\x96\xd3\x45\x50\x6f\xde\x1e\xb4\x1c\xd2\x83\x88\xff\x29\x2f\xce\xa9\xff\xdf\x34\xde\x75\x0f\xc0\xcc\x18\x0d\x94\x2e\xfc\x37\x01",
-        id: [ 0x03, 0x01, 0x9d, 0xf3, 0xfd, 0x85, 0xa6, 0x9a, 0x8e, 0xbd, 0x1f, 0xac, 0xc6, 0xda, 0x9b, 0xa7, 0x3e, 0x46, 0x97, 0x74, 0xfe, 0x77, 0xf5, 0x79, 0xfc, 0x5a, 0x08, 0xb8, 0x32, 0x8c, 0x1d, 0x6b ],
-        max_merge_delay: 86400,
-    },
-
+pub static LOGS: [&sct::Log; 31] = [
     /*
      * {
      *   "description": "Google 'Xenon2020' log",
@@ -378,26 +358,6 @@ pub static LOGS: [&sct::Log; 33] = [
         operated_by: "Google",
         key: b"\x04\x47\xed\x4c\x22\x7b\xbc\x43\x7f\x41\xc0\x36\x79\x46\x9f\x53\xc1\x78\x70\x9b\x79\x2d\xbe\x02\x73\xa6\x4f\xeb\xed\xd0\xe0\x1a\x4e\xd9\x69\xc3\x26\xde\x58\xdf\x72\x82\x2f\x3f\x51\x3b\xd9\x3f\x23\xbf\x22\xd3\xd5\xbb\xdd\x6a\x9c\xa5\x6a\x36\x5c\x4c\x7e\x96\xe6",
         id: [ 0x7d, 0x3e, 0xf2, 0xf8, 0x8f, 0xff, 0x88, 0x55, 0x68, 0x24, 0xc2, 0xc0, 0xca, 0x9e, 0x52, 0x89, 0x79, 0x2b, 0xc5, 0x0e, 0x78, 0x09, 0x7f, 0x2e, 0x6a, 0x97, 0x68, 0x99, 0x7e, 0x22, 0xf0, 0xd7 ],
-        max_merge_delay: 86400,
-    },
-
-    /*
-     * {
-     *   "description": "DigiCert Log Server 2",
-     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzF05L2a4TH/BLgOhNKPoioYCrkoRxvcmajeb8Dj4XQmNY+gxa4Zmz3mzJTwe33i0qMVp+rfwgnliQ/bM/oFmhA==",
-     *   "maximum_merge_delay": 86400,
-     *   "operated_by": [
-     *     2
-     *   ],
-     *   "url": "ct2.digicert-ct.com/log/"
-     * }
-     */
-    &sct::Log {
-        description: "DigiCert Log Server 2",
-        url: "ct2.digicert-ct.com/log/",
-        operated_by: "DigiCert",
-        key: b"\x04\xcc\x5d\x39\x2f\x66\xb8\x4c\x7f\xc1\x2e\x03\xa1\x34\xa3\xe8\x8a\x86\x02\xae\x4a\x11\xc6\xf7\x26\x6a\x37\x9b\xf0\x38\xf8\x5d\x09\x8d\x63\xe8\x31\x6b\x86\x66\xcf\x79\xb3\x25\x3c\x1e\xdf\x78\xb4\xa8\xc5\x69\xfa\xb7\xf0\x82\x79\x62\x43\xf6\xcc\xfe\x81\x66\x84",
-        id: [ 0x87, 0x75, 0xbf, 0xe7, 0x59, 0x7c, 0xf8, 0x8c, 0x43, 0x99, 0x5f, 0xbd, 0xf3, 0x6e, 0xff, 0x56, 0x8d, 0x47, 0x56, 0x36, 0xff, 0x4a, 0xb5, 0x60, 0xc1, 0xb4, 0xea, 0xff, 0x5e, 0xa0, 0x83, 0x0f ],
         max_merge_delay: 86400,
     },
 
