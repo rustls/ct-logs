@@ -14,7 +14,7 @@
         unused_extern_crates,
         unused_qualifications)]
 
-pub static LOGS: [&sct::Log; 31] = [
+pub static LOGS: [&sct::Log; 36] = [
     /*
      * {
      *   "description": "Google 'Xenon2020' log",
@@ -277,6 +277,26 @@ pub static LOGS: [&sct::Log; 31] = [
 
     /*
      * {
+     *   "description": "Trust Asia Log2021",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEjwlzYzssDEG4DpPoOS73Ewsdohc0MzaohzRmUz9dih7Z8SHyyviKmnQL1KKfY6VGFnt0ulbVupzGXSaYUAoupA==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     11
+     *   ],
+     *   "url": "ct.trustasia.com/log2021/"
+     * }
+     */
+    &sct::Log {
+        description: "Trust Asia Log2021",
+        url: "ct.trustasia.com/log2021/",
+        operated_by: "TrustAsia",
+        key: b"\x04\x8f\x09\x73\x63\x3b\x2c\x0c\x41\xb8\x0e\x93\xe8\x39\x2e\xf7\x13\x0b\x1d\xa2\x17\x34\x33\x36\xa8\x87\x34\x66\x53\x3f\x5d\x8a\x1e\xd9\xf1\x21\xf2\xca\xf8\x8a\x9a\x74\x0b\xd4\xa2\x9f\x63\xa5\x46\x16\x7b\x74\xba\x56\xd5\xba\x9c\xc6\x5d\x26\x98\x50\x0a\x2e\xa4",
+        id: [ 0x67, 0x8d, 0xb6, 0x5b, 0x3e, 0x74, 0x43, 0xb6, 0xf3, 0xa3, 0x70, 0xd5, 0xe1, 0x3a, 0xb1, 0xb4, 0x3b, 0xe0, 0xa0, 0xd3, 0x51, 0xf7, 0xca, 0x74, 0x22, 0x50, 0xc7, 0xc6, 0xfa, 0x51, 0xa8, 0x8a ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
      *   "description": "Google 'Aviator' log",
      *   "final_sth": {
      *     "sha256_root_hash": "LcGcZRsm+LGYmrlyC5LXhV1T6OD8iH5dNlb0sEJl9bA=",
@@ -403,6 +423,26 @@ pub static LOGS: [&sct::Log; 31] = [
 
     /*
      * {
+     *   "description": "Trust Asia Log2020",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEbsWC7ukn2WYOMxTAcqL8gMRZEQTZF9+Ho1MB9WLhHIaCHpHsJSx0DjJdVILW9mtM5xZtWywMWMQ9/R3OBgQEXQ==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     11
+     *   ],
+     *   "url": "ct.trustasia.com/log2020/"
+     * }
+     */
+    &sct::Log {
+        description: "Trust Asia Log2020",
+        url: "ct.trustasia.com/log2020/",
+        operated_by: "TrustAsia",
+        key: b"\x04\x6e\xc5\x82\xee\xe9\x27\xd9\x66\x0e\x33\x14\xc0\x72\xa2\xfc\x80\xc4\x59\x11\x04\xd9\x17\xdf\x87\xa3\x53\x01\xf5\x62\xe1\x1c\x86\x82\x1e\x91\xec\x25\x2c\x74\x0e\x32\x5d\x54\x82\xd6\xf6\x6b\x4c\xe7\x16\x6d\x5b\x2c\x0c\x58\xc4\x3d\xfd\x1d\xce\x06\x04\x04\x5d",
+        id: [ 0xa5, 0x95, 0x94, 0x3b, 0x53, 0x70, 0xbe, 0xe9, 0x06, 0xe0, 0x05, 0x0d, 0x1f, 0xb5, 0xbb, 0xc6, 0xa4, 0x0e, 0x65, 0xf2, 0x65, 0xae, 0x85, 0x2c, 0x76, 0x36, 0x3f, 0xad, 0xb2, 0x33, 0x36, 0xed ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
      *   "description": "Google 'Xenon2023' log",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEchY+C+/vzj5g3ZXLY3q5qY1Kb2zcYYCmRV4vg6yU84WI0KV00HuO/8XuQqLwLZPjwtCymeLhQunSxgAnaXSuzg==",
      *   "maximum_merge_delay": 86400,
@@ -463,6 +503,26 @@ pub static LOGS: [&sct::Log; 31] = [
 
     /*
      * {
+     *   "description": "Let's Encrypt 'Oak2023' log",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEsz0OeL7jrVxEXJu+o4QWQYLKyokXHiPOOKVUL3/TNFFquVzDSer7kZ3gijxzBp98ZTgRgMSaWgCmZ8OD74mFUQ==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     10
+     *   ],
+     *   "url": "oak.ct.letsencrypt.org/2023/"
+     * }
+     */
+    &sct::Log {
+        description: "Let's Encrypt 'Oak2023' log",
+        url: "oak.ct.letsencrypt.org/2023/",
+        operated_by: "Let's Encrypt",
+        key: b"\x04\xb3\x3d\x0e\x78\xbe\xe3\xad\x5c\x44\x5c\x9b\xbe\xa3\x84\x16\x41\x82\xca\xca\x89\x17\x1e\x23\xce\x38\xa5\x54\x2f\x7f\xd3\x34\x51\x6a\xb9\x5c\xc3\x49\xea\xfb\x91\x9d\xe0\x8a\x3c\x73\x06\x9f\x7c\x65\x38\x11\x80\xc4\x9a\x5a\x00\xa6\x67\xc3\x83\xef\x89\x85\x51",
+        id: [ 0xb7, 0x3e, 0xfb, 0x24, 0xdf, 0x9c, 0x4d, 0xba, 0x75, 0xf2, 0x39, 0xc5, 0xba, 0x58, 0xf4, 0x6c, 0x5d, 0xfc, 0x42, 0xcf, 0x7a, 0x9f, 0x35, 0xc4, 0x9e, 0x1d, 0x09, 0x81, 0x25, 0xed, 0xb4, 0x99 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
      *   "description": "Google 'Skydiver' log",
      *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEEmyGDvYXsRJsNyXSrYc9DjHsIa2xzb4UR7ZxVoV6mrc9iZB7xjI6+NrOiwH+P/xxkRmOFG6Jel20q37hTh58rA==",
      *   "maximum_merge_delay": 86400,
@@ -478,6 +538,26 @@ pub static LOGS: [&sct::Log; 31] = [
         operated_by: "Google",
         key: b"\x04\x12\x6c\x86\x0e\xf6\x17\xb1\x12\x6c\x37\x25\xd2\xad\x87\x3d\x0e\x31\xec\x21\xad\xb1\xcd\xbe\x14\x47\xb6\x71\x56\x85\x7a\x9a\xb7\x3d\x89\x90\x7b\xc6\x32\x3a\xf8\xda\xce\x8b\x01\xfe\x3f\xfc\x71\x91\x19\x8e\x14\x6e\x89\x7a\x5d\xb4\xab\x7e\xe1\x4e\x1e\x7c\xac",
         id: [ 0xbb, 0xd9, 0xdf, 0xbc, 0x1f, 0x8a, 0x71, 0xb5, 0x93, 0x94, 0x23, 0x97, 0xaa, 0x92, 0x7b, 0x47, 0x38, 0x57, 0x95, 0x0a, 0xab, 0x52, 0xe8, 0x1a, 0x90, 0x96, 0x64, 0x36, 0x8e, 0x1e, 0xd1, 0x85 ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
+     *   "description": "Trust Asia Log2022",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEu1LyFs+SC8555lRtwjdTpPX5OqmzBewdvRbsMKwu+HliNRWOGtgWLuRIa/bGE/GWLlwQ/hkeqBi4Dy3DpIZRlw==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     11
+     *   ],
+     *   "url": "ct.trustasia.com/log2022/"
+     * }
+     */
+    &sct::Log {
+        description: "Trust Asia Log2022",
+        url: "ct.trustasia.com/log2022/",
+        operated_by: "TrustAsia",
+        key: b"\x04\xbb\x52\xf2\x16\xcf\x92\x0b\xce\x79\xe6\x54\x6d\xc2\x37\x53\xa4\xf5\xf9\x3a\xa9\xb3\x05\xec\x1d\xbd\x16\xec\x30\xac\x2e\xf8\x79\x62\x35\x15\x8e\x1a\xd8\x16\x2e\xe4\x48\x6b\xf6\xc6\x13\xf1\x96\x2e\x5c\x10\xfe\x19\x1e\xa8\x18\xb8\x0f\x2d\xc3\xa4\x86\x51\x97",
+        id: [ 0xc3, 0x65, 0xf9, 0xb3, 0x65, 0x4f, 0x32, 0x83, 0xc7, 0x9d, 0xa9, 0x8e, 0x93, 0xd7, 0x41, 0x8f, 0x5b, 0xab, 0x7b, 0xe3, 0x25, 0x2c, 0x98, 0xe1, 0xd2, 0xf0, 0x4b, 0xb9, 0xeb, 0x42, 0x7d, 0x23 ],
         max_merge_delay: 86400,
     },
 
@@ -558,6 +638,26 @@ pub static LOGS: [&sct::Log; 31] = [
         operated_by: "Google",
         key: b"\x04\xd0\x90\x8f\x64\x52\x4e\x42\xac\x84\xb6\x2e\x4c\xf2\x3d\x77\x00\xb3\x77\x08\x05\x47\xaa\x45\x4c\xe3\x2c\x8e\x70\xa5\x82\xbb\x6c\xb2\x7b\x9c\x98\x7a\xa0\xe9\x11\x76\x28\x00\xb2\x20\xb4\xcd\xd3\x98\x7b\x4d\x96\x27\xe6\xb7\xee\x22\x6a\xd1\xb0\x2e\x91\x77\x78",
         id: [ 0xe8, 0x3e, 0xd0, 0xda, 0x3e, 0xf5, 0x06, 0x35, 0x32, 0xe7, 0x57, 0x28, 0xbc, 0x89, 0x6b, 0xc9, 0x03, 0xd3, 0xcb, 0xd1, 0x11, 0x6b, 0xec, 0xeb, 0x69, 0xe1, 0x77, 0x7d, 0x6d, 0x06, 0xbd, 0x6e ],
+        max_merge_delay: 86400,
+    },
+
+    /*
+     * {
+     *   "description": "Trust Asia Log2023",
+     *   "key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEpBFS2xdBTpDUVlESMFL4mwPPTJ/4Lji18Vq6+ji50o8agdqVzDPsIShmxlY+YDYhINnUrF36XBmhBX3+ICP89Q==",
+     *   "maximum_merge_delay": 86400,
+     *   "operated_by": [
+     *     11
+     *   ],
+     *   "url": "ct.trustasia.com/log2023/"
+     * }
+     */
+    &sct::Log {
+        description: "Trust Asia Log2023",
+        url: "ct.trustasia.com/log2023/",
+        operated_by: "TrustAsia",
+        key: b"\x04\xa4\x11\x52\xdb\x17\x41\x4e\x90\xd4\x56\x51\x12\x30\x52\xf8\x9b\x03\xcf\x4c\x9f\xf8\x2e\x38\xb5\xf1\x5a\xba\xfa\x38\xb9\xd2\x8f\x1a\x81\xda\x95\xcc\x33\xec\x21\x28\x66\xc6\x56\x3e\x60\x36\x21\x20\xd9\xd4\xac\x5d\xfa\x5c\x19\xa1\x05\x7d\xfe\x20\x23\xfc\xf5",
+        id: [ 0xe8, 0x7e, 0xa7, 0x66, 0x0b, 0xc2, 0x6c, 0xf6, 0x00, 0x2e, 0xf5, 0x72, 0x5d, 0x3f, 0xe0, 0xe3, 0x31, 0xb9, 0x39, 0x3b, 0xb9, 0x2f, 0xbf, 0x58, 0xeb, 0x3b, 0x90, 0x49, 0xda, 0xf5, 0x43, 0x5a ],
         max_merge_delay: 86400,
     },
 
