@@ -24,7 +24,7 @@ HEADER = """//!
         unused_extern_crates,
         unused_qualifications)]
 
-pub static LOGS: [&sct::Log; %d] = ["""
+pub static LOGS: &[&sct::Log]  = &["""
 
 FOOTER = """];"""
 
@@ -153,7 +153,7 @@ if __name__ == '__main__':
     for log in convert_json(data):
         logs[hexlify(log.keyid)] = log
 
-    print(HEADER % len(list(logs.keys())))
+    print(HEADER)
     for id in sorted(logs.keys()):
         print_log(logs[id])
     print(FOOTER)
