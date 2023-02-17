@@ -1,3 +1,8 @@
+# Archived
+
+This was part of an experimental effort to bring certificate transparency to the rustls ecosystem.
+At the moment, that effort is paused.
+
 # ct-logs
 This is a crate containing Google's
 [list of known Certificate Transparency logs](https://www.certificate-transparency.org/known-logs)
